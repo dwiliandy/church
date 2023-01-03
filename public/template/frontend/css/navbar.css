@@ -1,0 +1,62 @@
+.navbar{
+  min-height: 6em;
+}
+
+.navbar a{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #cf80fd;
+}
+.navbar .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.navbar .navbar-nav .nav-link.active {
+  color: #e9caff;
+}
+
+.dropdown-item{
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.dropdown-menu{
+  background-color: #552075;
+}
+
+.navbar .navbar-nav .nav-link .active {
+  background-color: #cf80fd !important;
+}
+
+@media only screen and (min-width: 992px) {
+
+  .navbar .navbar-nav .nav-link:hover {
+    color: #cf80fd;
+  }
+  .navbar .navbar-nav .nav-item {
+    position: relative;
+  }
+  .navbar .navbar-nav .nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #cf80fd;
+    width: 0%;
+    content: "";
+    height: 2px;
+    transition: all 0.5s;
+  }
+  
+  .navbar .navbar-nav .nav-item:hover::after {
+    width: 50%;
+  }
+  
+}
+
