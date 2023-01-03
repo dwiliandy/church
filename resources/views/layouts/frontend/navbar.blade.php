@@ -8,16 +8,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
+        <li class="nav-item mx-auto">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-auto">
           <a class="nav-link" href="#">Features</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-auto">
           <a class="nav-link" href="#">Pricing</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item mx-auto dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown link
           </a>

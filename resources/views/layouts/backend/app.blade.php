@@ -11,6 +11,7 @@
         {{ env('APP_NAME') }} | {{ $title }}
     </title>
 
+    <link rel="icon" href="{{ asset('images') }}/icon.png">
 
 
     <!-- Bootstrap CSS -->
