@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg p-0" data-bs-theme="dark" style="background-color:#552075">
+<nav class="navbar navbar-expand-lg p-0 sticky-top" data-bs-theme="dark" style="background-color:#552075">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="{{ asset('images') }}/sinodegmim.png" alt="" style="max-height: 60px">
+    <a class="navbar-brand" id="logo" href="#">
+      <img  src="{{ asset('images') }}/sinodegmim.png" alt="" style="max-height: 60px">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
