@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" data-bs-theme="dark" style="background-color:#552075">
+<nav class="navbar navbar-expand-lg p-0" data-bs-theme="dark" style="background-color:#552075">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="{{ asset('images') }}/sinodegmim.png" alt="" style="max-height: 60px">
