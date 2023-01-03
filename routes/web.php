@@ -18,9 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+#Admin Route
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
+  Route::get('/dashboard', function () {
+    return view('backend.dashboard');
+  })->name('admin_dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
