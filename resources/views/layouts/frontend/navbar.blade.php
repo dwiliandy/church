@@ -9,23 +9,25 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item mx-auto">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Beranda</a>
         </li>
         <li class="nav-item mx-auto">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item mx-auto">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="#">Struktur Organisasi</a>
         </li>
         <li class="nav-item mx-auto dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
+            Konten
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Renungan</a></li>
+            <li><a class="dropdown-item" href="#">Artikel</a></li>
           </ul>
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link" href="#contact_us">Kontak</a>
+        </li>
+        <li class="nav-item mx-auto">
+          <a class="nav-link" href="#contact_us">Tentang</a>
         </li>
       </ul>
     </div>
