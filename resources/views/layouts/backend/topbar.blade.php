@@ -8,7 +8,7 @@
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-      <a class="nav-link" style="color: #4e73df" href="{{ route('admin_dashboard') }}"><i class="fas fa-home"></i></a>
+      <a class="nav-link" style="color: #4e73df" href="/"><i class="fas fa-home"></i></a>
     </li>
       <div class="topbar-divider d-none d-sm-block"></div>
       <!-- Nav Item - User Information -->

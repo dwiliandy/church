@@ -3,6 +3,7 @@ body{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
 @media only screen and (min-width: 992px){
   .carousel-item img {
     height: calc(100vh - 70px);
