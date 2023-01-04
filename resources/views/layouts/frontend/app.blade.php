@@ -14,6 +14,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link href="{{ asset('template/frontend') }}/css/navbar.css" rel="stylesheet">
   <link href="{{ asset('template/frontend') }}/css/style.css" rel="stylesheet">
+  <link href="{{ asset('template/frontend') }}/css/animation.css" rel="stylesheet">
       @stack('css')
 </head>
 <body id="page-top">
@@ -34,15 +35,27 @@
     $('[data-toggle="tooltip"]').tooltip()
   })
 
-  // window.onscroll = function() {scrollFunction()};
-  // function scrollFunction() {
-  //   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-  //     document.getElementById("logo").style.fontSize = "20px";
-  //   } else {
-  //     document.getElementById("logo").style.fontSize = "30px";
-  //   }
-  // }
+  
+  function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
 </script>
+
 @stack('js')
 </body>
 </html>
