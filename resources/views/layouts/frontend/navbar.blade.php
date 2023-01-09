@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item mx-auto">
-          <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+          <a class="nav-link {{ Request::routeIs('homepage') ? 'active' : '' }}" aria-current="page" href="{{ route('homepage') }}">Beranda</a>
         </li>
         <li class="nav-item mx-auto">
           <a class="nav-link" href="#">Struktur Organisasi</a>
@@ -24,7 +24,7 @@
           </ul>
         </li>
         <li class="nav-item mx-auto">
-          <a class="nav-link" href="#contact_us">Kontak</a>
+          <a class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Kontak</a>
         </li>
         <li class="nav-item mx-auto">
           <a class="nav-link" href="#contact_us">Tentang</a>
