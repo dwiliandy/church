@@ -36,7 +36,7 @@
   <h1 class="text-center p-3 reveal fade-bottom" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">RENUNGAN DAN ARTIKEL</h1>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 px-5 border-end border-5 reveal fade-right">
+      <div class="col-md-6 px-5 border-end border-5 reveal fade-left">
           <h3 class="text-white text-center"><p class="d-inline p-2" style="background-color:#552075">ARTIKEL<p></h3>
           <img src="https://source.unsplash.com/WLUHO9A_xik/1600x900" class="card-img-top" alt="...">
           <div class="card-body">
@@ -45,47 +45,47 @@
             <p class="text-center"><a href="#">Read More ></a></p>
           </div>
           <div class="row border-top py-2">
-            <div class="col-md-3">
+            <div class="col-4">
               <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
             </div>
-            <div class="col-md-9">
+            <div class="col-8">
               <h5>Misi Penyelamatan</h5>
               <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
               <p><a href="#">Read More ></a></p>
             </div>
           </div>
           <div class="row border-top py-2">
-            <div class="col-md-3">
+            <div class="col-4">
               <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
             </div>
-            <div class="col-md-9">
+            <div class="col-8">
               <h5>Misi Penyelamatan</h5>
               <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
               <p><a href="#">Read More ></a></p>
             </div>
           </div>
           <div class="row border-top py-2">
-            <div class="col-md-3">
+            <div class="col-4">
               <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
             </div>
-            <div class="col-md-9">
+            <div class="col-8">
               <h5>Misi Penyelamatan</h5>
               <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
               <p><a href="#">Read More ></a></p>
             </div>
           </div>
           <div class="row border-top py-2">
-            <div class="col-md-3">
+            <div class="col-4">
               <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
             </div>
-            <div class="col-md-9">
+            <div class="col-8">
               <h5>Misi Penyelamatan</h5>
               <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
               <p><a href="#">Read More ></a></p>
             </div>
           </div>
       </div>
-      <div class="col-md-6 px-5 border-start border-5 reveal fade-left">
+      <div class="col-md-6 px-5 border-start border-5 reveal fade-right">
         <h3 class="text-white text-center"><p class="d-inline p-2" style="background-color:#552075">RENUNGAN<p></h3>
           <img src="https://source.unsplash.com/WLUHO9A_xik/1600x900" class="card-img-top" alt="...">
           <div class="card-body">
@@ -93,41 +93,41 @@
             <p class="text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <p class="text-center"><a href="#">Read More ></a></p>
           </div>
-          <div class="row border-top py-2">
-            <div class="col-md-3">
+          {{-- <div class="row border-top py-2">
+            <div class="col-4">
               <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
             </div>
-            <div class="col-md-9">
+            <div class="col-8">
+              <h5>Misi Penyelamatan</h5>
+              <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
+              <p><a href="#">Read More ></a></p>
+            </div>
+          </div> --}}
+          <div class="row border-top py-2">
+            <div class="col-4">
+              <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
+            </div>
+            <div class="col-8">
               <h5>Misi Penyelamatan</h5>
               <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
               <p><a href="#">Read More ></a></p>
             </div>
           </div>
           <div class="row border-top py-2">
-            <div class="col-md-3">
+            <div class="col-4">
               <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
             </div>
-            <div class="col-md-9">
+            <div class="col-8">
               <h5>Misi Penyelamatan</h5>
               <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
               <p><a href="#">Read More ></a></p>
             </div>
           </div>
           <div class="row border-top py-2">
-            <div class="col-md-3">
+            <div class="col-4">
               <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
             </div>
-            <div class="col-md-9">
-              <h5>Misi Penyelamatan</h5>
-              <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
-              <p><a href="#">Read More ></a></p>
-            </div>
-          </div>
-          <div class="row border-top py-2">
-            <div class="col-md-3">
-              <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
-            </div>
-            <div class="col-md-9">
+            <div class="col-8">
               <h5>Misi Penyelamatan</h5>
               <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
               <p><a href="#">Read More ></a></p>
@@ -169,7 +169,7 @@
           <p>Guru Agama GMIM RUT SENDANGAN</p>
         </div>
       </div>
-      <div class="w-75 p-3 mx-auto" style="border-top:2px solid #552075"></div>
+      <div class="w-75 p-3 mx-auto" style="border-top:2px solid #76528b"></div>
       <div id="bpmj" class="row py-3 reveal fade-right">
         <div class="col-md-4 text-center mx-auto">
           <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
