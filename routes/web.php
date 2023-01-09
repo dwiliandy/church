@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::get('/dashboard', function () {
     return view('backend.dashboard');
   })->name('admin_dashboard');
+
+  Route::resources([
+    'users' => UserController::class,
+    // 'posts' => PostController::class,
+  ]);
 });
 
 Route::middleware('auth')->group(function () {
