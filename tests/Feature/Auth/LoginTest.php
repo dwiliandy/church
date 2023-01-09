@@ -38,7 +38,7 @@ class LoginTest extends TestCase
       $response->assertRedirect(route('admin_dashboard'));
     }
 
-    public function test_users_can_not_authenticate_with_invalid_password()
+    public function test_failed_login_user()
     {
         $user = User::factory()->create();
         $this->post('/login', [
