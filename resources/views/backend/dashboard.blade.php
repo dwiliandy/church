@@ -17,7 +17,7 @@
     <div class="col-md-12">
       <h2 class="text-center border-bottom">MASTER DATA</h2>
     </div>
-    <div class="col-md-2 py-2">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 py-2">
       <a href="\">
         <div class="card" style="border-radius: 20px">
           <div class="card-body text-center">
@@ -27,7 +27,7 @@
         </div>
       </a>
     </div>
-    <div class="col-md-2 py-2">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 py-2">
       <a href="\">
         <div class="card" style="border-radius: 20px">
           <div class="card-body text-center">
@@ -37,7 +37,7 @@
         </div>
       </a>
     </div>
-    <div class="col-md-2 py-2">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 py-2">
       <a href="\">
         <div class="card" style="border-radius: 20px">
           <div class="card-body text-center">
@@ -47,7 +47,7 @@
         </div>
       </a>
     </div>
-    <div class="col-md-2 py-2">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 py-2">
       <a href="\">
         <div class="card" style="border-radius: 20px">
           <div class="card-body text-center">
@@ -57,7 +57,7 @@
         </div>
       </a>
     </div>
-    <div class="col-md-2 py-2">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 py-2">
       <a href="\">
         <div class="card" style="border-radius: 20px">
           <div class="card-body text-center">
@@ -67,7 +67,7 @@
         </div>
       </a>
     </div>
-    <div class="col-md-2 py-2">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 py-2">
       <a href="\">
         <div class="card" style="border-radius: 20px">
           <div class="card-body text-center">
