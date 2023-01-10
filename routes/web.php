@@ -32,7 +32,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
 
   Route::resources([
     'users' => UserController::class,
-    // 'posts' => PostController::class,
   ]);
 });
 

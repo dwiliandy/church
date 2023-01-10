@@ -35,6 +35,12 @@ return [
 
     'connections' => [
 
+
+        'testing' => [
+          'driver' => env('DB_TEST_DRIVER'),
+          'database' => ':memory:',
+        ],
+
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),

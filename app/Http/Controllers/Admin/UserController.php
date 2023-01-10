@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     Public function index(){
-      dd('asd');
+      return \view('backend.user.index');
     }
 }
