@@ -10,18 +10,24 @@ use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 class UsersTable extends LivewireDatatable
 {
     public $model = User::class;
+    public $exportable = true;
+    public $clearSearchButton = true;
+    public $hideable = 'select';
 
     public function columns()
     {
         return [
-          NumberColumn::name('id')
-                ->label('ID')
-                ->defaultSort('asc')
-                ->sortBy('id')
-                ->filterable(),
 
           Column::name('name')
               ->label('Name')
+              ->filterable(),
+
+          Column::name('username')
+              ->label('User Name')
+              ->filterable(),
+
+          Column::name('email')
+              ->label('Email')
               ->filterable(),
         ];
     }
