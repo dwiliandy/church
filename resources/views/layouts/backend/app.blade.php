@@ -29,6 +29,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ asset('backend/datatable.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/style.css') }}">
     @stack('css')
 </head>
 

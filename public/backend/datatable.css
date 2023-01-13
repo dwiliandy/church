@@ -3,23 +3,27 @@
 }
 
 .excel{
-  background-color: white;
-  color: #13bb6d;
   border: 1px solid #13bb6d;
+  color: white;
+  background-color: #13bb6d;
 }
 
 .excel:hover{
-  background-color: #13bb6d;
-  color: white;
+  color: #13bb6d;
+  background-color: white;
 }
 
 .show-hide{
-  background-color: white;
-  color: #7482f6;
-  border: 1px solid #7482f6;
+  border: 1px solid #a50455;
+  background-color: #a50455;
+  color: white;
 }
 
 .show-hide:hover{
-  background-color: #7482f6;
-  color: white;
+  background-color: white;
+  color: #a50455;
+}
+
+.search{
+  border: 1px solid #eeee;
 }

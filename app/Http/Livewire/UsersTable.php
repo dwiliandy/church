@@ -19,15 +19,18 @@ class UsersTable extends LivewireDatatable
         return [
 
           Column::name('name')
-              ->label('Name')
+              ->label('Nama')
+              ->searchable()
               ->filterable(),
 
           Column::name('username')
-              ->label('User Name')
+              ->label('Username')
+              ->searchable()  
               ->filterable(),
 
           Column::name('email')
-              ->label('Email')
+              ->label('Email')    
+              ->searchable()
               ->filterable(),
         ];
     }

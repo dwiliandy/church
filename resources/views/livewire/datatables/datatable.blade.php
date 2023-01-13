@@ -11,7 +11,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </div>
-                            <input wire:model.debounce.500ms="search" class="block w-full py-3 pl-10 text-sm border-gray-300 leading-4 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 focus:outline-none" placeholder="{{__('Search in')}} {{ $this->searchableColumns()->map->label->join(', ') }}" type="text" />
+                            <input wire:model.debounce.500ms="search" class=" search block w-full leading-9 pl-10 font-medium tracking-wider  text-xs space-x-2 border-gray-300 rounded-md" placeholder="{{__('Cari di')}} {{ $this->searchableColumns()->map->label->join(', ') }}" type="text" />
                             <div class="absolute inset-y-0 right-0 flex items-center pr-2">
                                 <button wire:click="$set('search', null)" class="text-gray-300 hover:text-red-600 focus:outline-none">
                                     <x-icons.x-circle class="w-5 h-5 stroke-current" />
@@ -30,7 +30,7 @@
                 <x-icons.cog wire:loading class="text-gray-400 h-9 w-9 animate-spin" />
 
                 @if($this->activeFilters)
-                    <button wire:click="clearAllFilters" class="flex items-center px-3 text-xs font-medium tracking-wider text-red-500 uppercase bg-white border border-red-400 space-x-2 rounded-md leading-4 hover:bg-red-200 focus:outline-none"><span>{{ __('Reset') }}</span>
+                    <button wire:click="clearAllFilters" class="flex items-center px-3 text-xs font-medium tracking-wider text-red-500 uppercase bg-white border border-red-400 space-x-2 rounded-md leading-4 hover:bg-red-200 focus:outline-none"><span>{{ __('Atur Ulang') }}</span>
                         <x-icons.x-circle class="m-2" />
                     </button>
                 @endif
@@ -39,7 +39,7 @@
                     <div class="flex items-center justify-center space-x-1">
                         <label for="datatables_mass_actions">{{ __('With selected') }}:</label>
                         <select wire:model="massActionOption" class="px-3 text-xs font-medium tracking-wider uppercase bg-white border border-green-400 space-x-2 rounded-md leading-4 focus:outline-none" id="datatables_mass_actions">
-                            <option value="">{{ __('Choose...') }}</option>
+                            <option value="">{{ __('Pilih...') }}</option>
                             @foreach($this->massActionsOptions as $group => $items)
                                 @if(!$group)
                                     @foreach($items as $item)
@@ -218,7 +218,7 @@
                         </div>
 
                         <div class="flex justify-end text-gray-600">
-                            {{__('Results')}} {{ $this->results->firstItem() }} - {{ $this->results->lastItem() }} {{__('of')}}
+                            {{__('Hasil')}} {{ $this->results->firstItem() }} - {{ $this->results->lastItem() }} {{__('of')}}
                             {{ $this->results->total() }}
                         </div>
                     @endif
