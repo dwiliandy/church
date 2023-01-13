@@ -10,7 +10,7 @@
   <div class="container mx-auto">
     <h1>Users</h1>
     <div class="py-3">
-      {{-- <livewire:users-table/> --}}
+      <livewire:users-table/>
     </div>
   </div>
 @endsection

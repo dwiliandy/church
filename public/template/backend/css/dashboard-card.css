@@ -19,12 +19,11 @@ a:active {
 }
 
 .card{
-  border-right: solid 8px #4e73df;
   border-left: solid 8px #4e73df;
+  box-shadow: #858796 2px;
 }
 
 .card:hover{
-  border-right: solid 8px green;
   border-left: solid 8px green;
   transition-duration: 1s;
 

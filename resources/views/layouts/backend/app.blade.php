@@ -23,9 +23,9 @@
     <link href="{{ asset('template/backend') }}/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="{{ asset('template/backend') }}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-    {{-- Trix Editor --}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/trix.css') }}">
-    <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    @livewireStyles
+    {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     @stack('css')
@@ -80,7 +80,7 @@
 </body>
 <script src="{{ asset('template/backend') }}/vendor/jquery/jquery.min.js"></script>
 <script src="{{ asset('template/backend') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('template/backend') }}/vendor/jquery-easing/jquery.easing.min.js"></script>
 
@@ -93,7 +93,7 @@
 <!-- Page level custom scripts -->
 <script src="{{ asset('template/backend') }}/js/demo/datatables-demo.js"></script>
 <script src="{{ asset('template/backend') }}/js/demo/datatables-language.js"></script>
-
+@livewireScripts
 <script>
   $.ajaxSetup({
     headers: {
