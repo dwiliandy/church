@@ -2,7 +2,7 @@
     <div class="flex flex-col items-center relative">
         <button x-on:click="show = !show" class="px-3 py-2 text-xs leading-4 font-medium uppercase tracking-wider show-hide rounded-md">
             <div class="flex items-center h-5">
-                {{ __('Show / Hide Columns')}}
+                {{ __('Tampil/Sembunyikan Kolom')}}
             </div>
         </button>
         <div x-show="show" x-on:click.away="show = false" class="z-50 absolute mt-5 -mr-4shadow-2xl bg-white w-full right-0 rounded max-h-select overflow-y-auto" x-cloak>

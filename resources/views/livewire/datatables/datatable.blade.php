@@ -30,7 +30,7 @@
                 <x-icons.cog wire:loading class="text-gray-400 h-9 w-9 animate-spin" />
 
                 @if($this->activeFilters)
-                    <button wire:click="clearAllFilters" class="flex items-center px-3 text-xs font-medium tracking-wider text-red-500 uppercase bg-white border border-red-400 space-x-2 rounded-md leading-4 hover:bg-red-200 focus:outline-none"><span>{{ __('Atur Ulang') }}</span>
+                    <button wire:click="clearAllFilters" class="reset flex items-center px-3 text-xs font-medium tracking-wider uppercase space-x-2 rounded-md leading-4"><span>{{ __('Atur Ulang') }}</span>
                         <x-icons.x-circle class="m-2" />
                     </button>
                 @endif

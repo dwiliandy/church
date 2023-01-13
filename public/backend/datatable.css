@@ -13,6 +13,17 @@
   background-color: white;
 }
 
+.reset{
+  border: 1px solid #ef4444;
+  color: white;
+  background-color: #ef4444;
+}
+
+.reset:hover{
+  color: #ef4444;
+  background-color: white;
+}
+
 .show-hide{
   border: 1px solid #a50455;
   background-color: #a50455;
