@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg p-0 sticky-top" data-bs-theme="dark" style="background-color:#552075">
+<nav class="navbar navbar-expand-lg pb-3 p-lg-0 sticky-top" data-bs-theme="dark" style="background-color:#552075">
   <div class="container">
     <a class="navbar-brand" id="logo" href="#">
       <img  src="{{ asset('images') }}/sinodegmim.png" alt="" style="max-height: 60px">
@@ -15,10 +15,10 @@
           <a class="nav-link" href="#">Struktur Organisasi</a>
         </li>
         <li class="nav-item mx-auto dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Konten
+          <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span >Konten</span>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu w-100">
             <li><a class="dropdown-item" href="#">Renungan</a></li>
             <li><a class="dropdown-item" href="#">Artikel</a></li>
           </ul>
