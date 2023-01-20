@@ -35,6 +35,16 @@
     $('[data-toggle="tooltip"]').tooltip()
   })
 
+  $(window).scroll(function () {
+    var navbar = document.getElementById("navbar");
+    if ($(this).scrollTop() > 60) {
+      navbar.classList.remove("bg-purple");
+      navbar.classList.add("bg-trans");
+    } else {
+      navbar.classList.add("bg-purple");
+      navbar.classList.remove("bg-trans");
+    }
+  });
   
   function reveal() {
   var reveals = document.querySelectorAll(".reveal");

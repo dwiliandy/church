@@ -16,11 +16,31 @@
       <h2 class="text-center border-bottom">MASTER DATA</h2>
     </div>
     <div class="col-xl-2 col-lg-3 col-md-4 col-6 py-2">
+      <a href="{{ route('users.index') }}">
+        <div class="card" style="border-radius: 20px">
+          <div class="card-body text-center">
+            <i class="fas fa-user-cog fa-2x"></i>
+            <h5 class="m-0 p-0">Admin</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-xl-2 col-lg-3 col-md-4 col-6 py-2">
       <a href="\">
         <div class="card" style="border-radius: 20px">
           <div class="card-body text-center">
             <i class="fas fa-users fa-2x"></i>
             <h5 class="m-0 p-0">Users</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-xl-2 col-lg-3 col-md-4 col-6 py-2">
+      <a href="\">
+        <div class="card" style="border-radius: 20px">
+          <div class="card-body text-center">
+            <i class="fas fa-users fa-2x"></i>
+            <h5 class="m-0 p-0 ">Users</h5>
           </div>
         </div>
       </a>
@@ -55,25 +75,10 @@
         </div>
       </a>
     </div>
-    <div class="col-xl-2 col-lg-3 col-md-4 col-6 py-2">
-      <a href="\">
-        <div class="card" style="border-radius: 20px">
-          <div class="card-body text-center">
-            <i class="fas fa-users fa-2x"></i>
-            <h5 class="m-0 p-0">Users</h5>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col-xl-2 col-lg-3 col-md-4 col-6 py-2">
-      <a href="\">
-        <div class="card" style="border-radius: 20px">
-          <div class="card-body text-center">
-            <i class="fas fa-users fa-2x"></i>
-            <h5 class="m-0 p-0">Users</h5>
-          </div>
-        </div>
-      </a>
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btn btn-purple rounded">asds</button>
+      </div>
     </div>
   </div>
 </div>

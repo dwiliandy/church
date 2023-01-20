@@ -30,7 +30,7 @@
     </span>
   </div>
   <!-- Nav Item - Dashboard -->
-  <li class="nav-item {{ Request::routeIs('dashboard') ? 'active' : '' }}">
+  <li class="nav-item {{ Request::routeIs('users.index') ? 'active' : '' }}">
     
       <a class="nav-link" href="{{ route('users.index') }}">
           <i class="fas fa-fw fa-users"></i>

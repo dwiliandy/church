@@ -3,6 +3,10 @@ a:link {
   text-decoration: none;
 }
 
+a{
+  color: #ac5fdb
+}
+
 /* visited link */
 a:visited {
   color: rgb(66, 66, 245)blue;
@@ -19,7 +23,7 @@ a:active {
 }
 
 .card{
-  border-left: solid 8px #4e73df;
+  border-left: solid 8px #ac5fdb;
   box-shadow: #858796 2px;
 }
 
