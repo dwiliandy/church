@@ -140,7 +140,7 @@
 {{-- End Article dan Renungan --}}
 
 {{-- Pelayan --}}
-<div id="pelayan" class="py-4" style="min-height: 100vh;background-color:#c298db">
+<div id="pelayan" class="py-4" style="min-height: 100vh;background-color:#AF6DF2">
   <div class="reveal fade-bottom">
     <h1 class="text-center pt-5 mb-0 pb-0" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">PENDETA & BPMJ</h1>
     <p class="text-center pt-0">Periode Pelayanan 2022-2027</p>
