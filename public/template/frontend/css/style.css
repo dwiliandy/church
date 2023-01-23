@@ -28,6 +28,23 @@ body{
   background: #9362af; 
 }
 
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  background-color: rgba(85,32,117, 0.5);
+  padding: 15px;
+}
+
+.carousel-control-next-icon:hover, .carousel-control-prev-icon:hover{
+  background-color: rgba(85,32,117, 0.9);
+  padding: 15px;
+}
+.carousel-control-prev{
+  justify-content: start;
+}
+
+.carousel-control-next{
+  justify-content: end;
+}
+
 
 
 @media only screen and (min-width: 992px){

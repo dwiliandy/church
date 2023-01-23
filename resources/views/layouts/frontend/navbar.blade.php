@@ -21,7 +21,7 @@
           </a>
           <ul class="dropdown-menu w-100">
             <li><a class="dropdown-item" href="#">Renungan</a></li>
-            <li><a class="dropdown-item" href="#">Artikel</a></li>
+            <li><a class="dropdown-item active" href="#">Artikel</a></li>
           </ul>
         </li>
         <li class="nav-item mx-auto">

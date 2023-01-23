@@ -74,10 +74,17 @@
 .dropdown-item{
   color: #fff;
   font-size: 1.1em;
+  transition: .5s ease-in-out;
 }
 
 .dropdown-menu{
   background-color: #552075;
+}
+
+.dropdown-item.active{
+  background-color: #fff;
+  color: #552075;
+  font-size: 1.1em;
 }
 
 
@@ -119,6 +126,18 @@ a.dropdown-item:hover {
 
 @media only screen and (min-width: 992px) {
 
+  .dropdown-item.active{
+    border: 2px solid #552075;
+    border-radius: 5px;
+    margin: 10px;
+  }
+
+  .dropdown-item:hover{
+    border: 2px solid #552075;
+    border-radius: 5px;
+    margin: 10px;
+    transition: .5s ease-in-out;
+  }
   
 }
 
