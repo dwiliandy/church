@@ -33,7 +33,7 @@
 {{-- End Slider --}}
 
 {{-- About --}}
-<div class="row" style="background-color:#532667">
+<div class="row min-vh-100" style="background-color:#552075">
   <div class="col-md-6 " style="padding: 30px">
     <h2 class="text-center text-white py-4 reveal fade-left"> Tentang GMIM RUT</h2>
     {{-- <img src="{{ asset('images/sinodegmim.png') }}" class="img-fluid mx-auto"  alt=""> --}}
@@ -47,6 +47,78 @@
   </div>
 </div>
 {{-- End About --}}
+
+{{-- Pelayan --}}
+<div id="pelayan" class="py-4" style="min-height: 100vh;">
+  <div class="reveal fade-bottom">
+    <h1 class="text-center pt-5 mb-0 pb-0" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">PENDETA & BPMJ</h1>
+    <p class="text-center pt-0">Periode Pelayanan 2022-2027</p>
+      <div id="ketua-jemaat reveal fade-bottom" class="row">
+        <div class="col-md-12 text-center">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pdt. Sapa wona, S.Th.</h3>
+          <p>Ketua Jemaat GMIM RUT SENDANGAN</p>
+        </div>
+      </div>
+      <div class="w-75 p-3 mx-auto" style="border-top:2px solid #552075"></div>
+      <div id="pendeta-pelayan" class="row py-3 reveal fade-left">
+        <div class="col-md-4 text-center">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pdt. Sapa wona, S.Th.</h3>
+          <p>Pendeta Pelayan GMIM RUT SENDANGAN</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pdt. Sapa wona, S.Th.</h3>
+          <p>Pendeta Pelayan GMIM RUT SENDANGAN</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pdt. Sapa wona, S.Th.</h3>
+          <p>Guru Agama GMIM RUT SENDANGAN</p>
+        </div>
+      </div>
+      <div class="w-75 p-3 mx-auto" style="border-top:2px solid #76528b"></div>
+      <div id="bpmj" class="row py-3 reveal fade-right">
+        <div class="col-md-4 text-center mx-auto">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pnt. Sapa sapa,S.Pd.</h3>
+          <p>Sekretaris</p>
+        </div>
+        <div class="col-md-4 text-center mx-auto">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Dkn. Sapa sapa,S.Ak.</h3>
+          <p>Bendahara</p>
+        </div>
+        <div class="col-md-4 text-center mx-auto">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
+          <p>Penatua P/KB</p>
+        </div>
+        <div class="col-md-4 text-center mx-auto">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
+          <p>Penatua W/KI</p>
+        </div>
+        <div class="col-md-4 text-center mx-auto">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
+          <p>Penatua Pemuda</p>
+        </div>
+        <div class="col-md-4 text-center mx-auto">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
+          <p>Penatua Remaja</p>
+        </div>
+        <div class="col-md-4 text-center mx-auto">
+          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
+          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
+          <p>Penatua ASM</p>
+        </div>
+      </div>
+  </div>
+</div>
+{{-- End Pelayan --}}
 
 {{-- Article dan Renungan --}}
 <div id="content" class="py-4" style="min-height: 100vh;">
@@ -167,78 +239,8 @@
 </div>
 {{-- End Article dan Renungan --}}
 
-{{-- Pelayan --}}
-<div id="pelayan" class="py-4" style="min-height: 100vh;background-color:#AF6DF2">
-  <div class="reveal fade-bottom">
-    <h1 class="text-center pt-5 mb-0 pb-0" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">PENDETA & BPMJ</h1>
-    <p class="text-center pt-0">Periode Pelayanan 2022-2027</p>
-      <div id="ketua-jemaat reveal fade-bottom" class="row">
-        <div class="col-md-12 text-center">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pdt. Sapa wona, S.Th.</h3>
-          <p>Ketua Jemaat GMIM RUT SENDANGAN</p>
-        </div>
-      </div>
-      <div class="w-75 p-3 mx-auto" style="border-top:2px solid #552075"></div>
-      <div id="pendeta-pelayan" class="row py-3 reveal fade-left">
-        <div class="col-md-4 text-center">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pdt. Sapa wona, S.Th.</h3>
-          <p>Pendeta Pelayan GMIM RUT SENDANGAN</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pdt. Sapa wona, S.Th.</h3>
-          <p>Pendeta Pelayan GMIM RUT SENDANGAN</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pdt. Sapa wona, S.Th.</h3>
-          <p>Guru Agama GMIM RUT SENDANGAN</p>
-        </div>
-      </div>
-      <div class="w-75 p-3 mx-auto" style="border-top:2px solid #76528b"></div>
-      <div id="bpmj" class="row py-3 reveal fade-right">
-        <div class="col-md-4 text-center mx-auto">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pnt. Sapa sapa,S.Pd.</h3>
-          <p>Sekretaris</p>
-        </div>
-        <div class="col-md-4 text-center mx-auto">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Dkn. Sapa sapa,S.Ak.</h3>
-          <p>Bendahara</p>
-        </div>
-        <div class="col-md-4 text-center mx-auto">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
-          <p>Penatua P/KB</p>
-        </div>
-        <div class="col-md-4 text-center mx-auto">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
-          <p>Penatua W/KI</p>
-        </div>
-        <div class="col-md-4 text-center mx-auto">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
-          <p>Penatua Pemuda</p>
-        </div>
-        <div class="col-md-4 text-center mx-auto">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
-          <p>Penatua Remaja</p>
-        </div>
-        <div class="col-md-4 text-center mx-auto">
-          <img class="rounded-circle border border-5" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="150px" height="150px" alt="">
-          <h3 class=" mb-0"> Pnt. Sapa wona</h3>
-          <p>Penatua ASM</p>
-        </div>
-      </div>
-  </div>
-</div>
-{{-- End Pelayan --}}
-<div id="contact_us" class="my-4" style="min-height: 100vh">
+{{-- Contact Us --}}
+<div id="contact_us" class="py-4" style="min-height: 100vh">
   <h1 class="text-center p-3 reveal fade-bottom" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">HUBUNGI KAMI</h1>
   <div class="container">
     <div class="row">
@@ -261,6 +263,30 @@
     </div>
   </div>
 </div>
+{{-- End Contact Us --}}
+
+{{-- Form Doa --}}
+<div id="prayer" class="">
+  <div class="parallax d-flex justify-content-center align-items-center">
+    <form class="opacity-75 p-5 m-4 reveal fade-bottom" style="background-color: rgba(85,32,117,.9); border-radius: 30px" action="/">  
+      <h1 class="text-center text-white p-3" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">POKOK DOA</h1>
+      <div class="row">
+        <div class="mb-3 col-md-12">
+          <label for="name" class="form-label text-white">Nama</label>
+          <input type="text" class="form-control" id="name" aria-describedby="name" name="name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-white">Isi Doa</label>
+          <textarea class="form-control" name="body" rows="3"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>
+{{-- EndForm Doa --}}
 @endsection
 
 @push('js')

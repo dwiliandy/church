@@ -88,6 +88,15 @@ body{
   transform: translate(-50%, -50%);
 }
 
+.parallax{
+  background-image: url("../../../images/prayer.webp");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media only screen and (min-width: 992px){
   .carousel-item img {
     height: calc(100vh - 70px);
