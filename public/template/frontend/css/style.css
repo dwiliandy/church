@@ -7,13 +7,13 @@ body{
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #552075;
-  box-shadow: inset 0 0 5px #552075; 
+  /* box-shadow: inset 0 0 5px #552075;  */
   /* border-radius: 10px; */
 }
  
@@ -30,12 +30,12 @@ body{
 
 .carousel-control-next-icon, .carousel-control-prev-icon{
   background-color: rgba(85,32,117, 0.5);
-  padding: 15px;
+  padding: 20px;
 }
+
 
 .carousel-control-next-icon:hover, .carousel-control-prev-icon:hover{
   background-color: rgba(85,32,117, 0.9);
-  padding: 15px;
 }
 .carousel-control-prev{
   justify-content: start;
