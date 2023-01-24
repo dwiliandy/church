@@ -26,6 +26,7 @@
     <div class="py-3">
       <livewire:users-table/>
     </div>
+    
 
     {{-- Create Modal --}}
     <div class="modal fade" id="createModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
@@ -81,6 +82,7 @@
 
   @push('js')
     <script>
+      $('.toast').toast('show')
       $("#create").on("submit", function (e) {
         let formData = new FormData(this);
         e.preventDefault();
