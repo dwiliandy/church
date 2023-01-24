@@ -31,6 +31,22 @@
   </button>
 </div>
 {{-- End Slider --}}
+
+{{-- About --}}
+<div class="row" style="background-color:#532667">
+  <div class="col-md-6 " style="padding: 30px">
+    <h2 class="text-center text-white py-4 reveal fade-left"> Tentang GMIM RUT</h2>
+    {{-- <img src="{{ asset('images/sinodegmim.png') }}" class="img-fluid mx-auto"  alt=""> --}}
+    <p class="text-white text-center lh-lg reveal fade-bottom">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit doloremque placeat, inventore ea sequi reiciendis vero, ipsam, et voluptatem cumque molestiae consequuntur iure commodi libero numquam? Dolorum assumenda reiciendis blanditiis dolorem inventore iste, adipisci nemo nesciunt, sequi totam cumque voluptates tempora magnam natus doloribus fugit quisquam. Libero, facere quod placeat eum perferendis iure molestiae consequuntur vero odio quia dignissimos totam est, blanditiis earum recusandae, sed quo architecto vitae quasi et saepe voluptate minima. Aperiam sapiente asperiores esse eaque dolore tempore tenetur autem eos quos ipsam aspernatur quae, beatae ipsa et commodi sint odit mollitia earum quasi expedita repudiandae accusantium natus.</p>
+  </div>
+  <div id="church" class="col-md-6 d-none d-md-block align-self-center p-x py-5 reveal fade-right">
+    <img src="{{ asset('images/church.jpg') }}" class="w-100 float-end" style="border-radius: 30% 0 0 30%; border:white 1px solid" alt="this-church">
+    <div class="caption w-100">
+      <h4 class="text-white text-center py-4" style="background-color: rgba(83,38,103, .4)">Nanti disini gambar gereja rencananya</h4>
+     </div>
+  </div>
+</div>
+{{-- End About --}}
 {{-- Article dan Renungan --}}
 <div id="content" class="py-4" style="min-height: 100vh;">
   <h1 class="text-center p-3 reveal fade-bottom" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">RENUNGAN DAN ARTIKEL</h1>
@@ -142,7 +158,7 @@
 
         </div>
         <div class="mt-auto text-center">
-            <a href="" class="btn btn-article">Lihat Semua Renungan</a>
+            <a href="" class="btn btn-article ">Lihat Semua Renungan</a>
         </div>
       </div>
     </div>
