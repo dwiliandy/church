@@ -34,7 +34,7 @@
 
 {{-- About --}}
 <div class="row min-vh-100" style="background-color:#552075">
-  <div class="col-md-6 " style="padding: 30px">
+  <div class="col-md-6 align-self-center " style="padding: 30px">
     <h2 class="text-center text-white py-4 reveal fade-left"> Tentang GMIM RUT</h2>
     {{-- <img src="{{ asset('images/sinodegmim.png') }}" class="img-fluid mx-auto"  alt=""> --}}
     <p class="text-white text-center lh-lg reveal fade-bottom">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit doloremque placeat, inventore ea sequi reiciendis vero, ipsam, et voluptatem cumque molestiae consequuntur iure commodi libero numquam? Dolorum assumenda reiciendis blanditiis dolorem inventore iste, adipisci nemo nesciunt, sequi totam cumque voluptates tempora magnam natus doloribus fugit quisquam. Libero, facere quod placeat eum perferendis iure molestiae consequuntur vero odio quia dignissimos totam est, blanditiis earum recusandae, sed quo architecto vitae quasi et saepe voluptate minima. Aperiam sapiente asperiores esse eaque dolore tempore tenetur autem eos quos ipsam aspernatur quae, beatae ipsa et commodi sint odit mollitia earum quasi expedita repudiandae accusantium natus.</p>
@@ -42,7 +42,7 @@
   <div id="church" class="col-md-6 d-none d-md-block align-self-center p-x py-5 reveal fade-right">
     <img src="{{ asset('images/church.jpg') }}" class="w-100 float-end border border-end-0 shadow-sm" style="border-radius: 30% 0 0 30%;" alt="this-church">
     <div class="caption w-100">
-      <h4 class="text-white text-center py-4" style="background-color: rgba(83,38,103, .4)">Nanti disini gambar gereja rencananya</h4>
+      <h4 class="text-3 text-center py-4" style="background-color: rgba(83,38,103, .3)">Nanti disini gambar gereja rencananya</h4>
      </div>
   </div>
 </div>
@@ -188,16 +188,6 @@
               <p class="text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <p class="text-center"><a href="#">Read More ></a></p>
             </div>
-            {{-- <div class="row border-top py-2">
-              <div class="col-4">
-                <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
-              </div>
-              <div class="col-8">
-                <h5>Misi Penyelamatan</h5>
-                <small>Some quick example text to build on the card title and make up the bulk of the card's cont...</small>
-                <p><a href="#">Read More ></a></p>
-              </div>
-            </div> --}}
             <div class="row border-top py-2">
               <div class="col-4">
                 <img class="" src="https://source.unsplash.com/WLUHO9A_xik/1600x900" width="90px" height="90px" alt="">
@@ -266,10 +256,10 @@
 {{-- End Contact Us --}}
 
 {{-- Form Doa --}}
-<div id="prayer" class="">
+<div id="prayer" style="min-height: 100vh">
   <div class="parallax d-flex justify-content-center align-items-center">
-    <form class="opacity-75 p-5 m-4 reveal fade-bottom" style="background-color: rgba(85,32,117,.9); border-radius: 30px" action="/">  
-      <h1 class="text-center text-white p-3" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">POKOK DOA</h1>
+    <form class=" p-5 m-4" style="background-color: rgb(85,32,117); opacity: 0.9; border-radius: 30px" action="/">  
+      <h1 class="text-center text-white " style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight:500">POKOK DOA</h1>
       <div class="row">
         <div class="mb-3 col-md-12">
           <label for="name" class="form-label text-white">Nama</label>
@@ -280,7 +270,7 @@
           <textarea class="form-control" name="body" rows="3"></textarea>
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-submit">Submit</button>
       </div>
       </div>
     </form>

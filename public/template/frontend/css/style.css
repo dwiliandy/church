@@ -90,11 +90,25 @@ body{
 
 .parallax{
   background-image: url("../../../images/prayer.webp");
-  min-height: 500px;
+  min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.btn-submit{
+  padding: 10px 50px;
+  background-color: #38005a;
+  opacity: 1;
+  color: white;
+  border: white solid 1px;
+}
+
+.btn-submit:hover{
+  background-color: #180027;
+  color: white;
+  border: white solid 1px;
 }
 
 @media only screen and (min-width: 992px){
