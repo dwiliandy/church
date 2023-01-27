@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GroupController;
+use App\Http\Controllers\Admin\FamilyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
 
   Route::resource('/users', UserController::class);
   Route::resource('/groups', GroupController::class)->only(['index','store']);
+  Route::resource('/families', FamilyController::class);
 });
 
 
