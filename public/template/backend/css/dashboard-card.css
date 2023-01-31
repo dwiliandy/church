@@ -4,7 +4,7 @@ a:link {
 }
 
 a{
-  color: #ac5fdb
+  color: #007bff
 }
 
 /* visited link */
@@ -23,13 +23,13 @@ a:active {
 }
 
 .card{
-  border-left: solid 8px #ac5fdb;
+  border-left: solid 8px #007bff;
   box-shadow: #858796 2px;
 }
 
 .card:hover{
   border-left: solid 8px green;
-  transition-duration: 1s;
+  transition-duration: .5s;
 
 }
 

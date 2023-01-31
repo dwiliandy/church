@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('family_name');
             $table->boolean('status')->default(1);  
+            $table->string('slug')->unique();
             $table->unsignedBigInteger('group_id')->nullable();
             $table->foreign('group_id')->references('id')->on('group_data');
             $table->timestamps();

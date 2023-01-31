@@ -1,5 +1,5 @@
 @extends('layouts.auth.app',[
-  'title' =>'Sign In'
+  'title' =>'Login'
 ])
 
 @push('css')
@@ -62,7 +62,7 @@
   <main class="form-signin w-100 m-auto">
     <form method="POST" action="{{ route('login') }}">
     @csrf
-       {{-- <img class="mb-4 img-fluid  mx-auto d-block" src="{{ asset('sion-1.jfif') }}" alt="" width="200" height="200"> --}}
+       <img class="mb-4 img-fluid  mx-auto d-block" src="{{ asset('images/gmim.png') }}" alt="" width="200" height="200">
     @if ($errors->any())
       <div class="alert alert-danger border-left-danger" role="alert">
           {{ $errors->first() }}
@@ -70,19 +70,22 @@
       </div>
     @endif
       {{-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> --}}
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <h1 class="h3 mb-3 fw-normal">Selamat Datang</h1>
 
-      <div class="form-floating">
-        <input type="text" name="login" class="form-control" id="floatingInput" placeholder="Email/Username">
-        <label for="floatingInput">Email/Username</label>
-      </div>
-      <div class="form-floating">
-        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-floating">
+            <input type="text" name="login" class="form-control " style="border-radius: 10px 10px 0 0" id="floatingInput" placeholder="Email/Username">
+            <label for="floatingInput">Email/Username</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" name="password" class="form-control border-top-0" style="border-radius: 0 0 10px 10px" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+        </div>
       </div>
 
       <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; Omega</p>
     </form>
   </main>
 @endsection
