@@ -3,7 +3,6 @@
 ])
 
 @push('css')
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 @endpush
 
 @section('content')

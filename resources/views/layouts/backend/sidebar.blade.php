@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin_dashboard') }}">
@@ -35,6 +35,20 @@
       <a class="nav-link" href="{{ route('users.index') }}">
           <i class="fas fa-fw fa-users"></i>
           <span>Admin </span>
+      </a>
+         
+  </li>
+  <div class="sidebar-heading mt-2">
+    <span class=" text-md font-bold uppercase">
+      Master Data Keuangan
+    </span>
+  </div>
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item {{ Request::routeIs('years.index') ? 'active' : '' }}">
+    
+      <a class="nav-link" href="{{ route('years.index') }}">
+        <i class="far fa-calendar"></i>
+          <span>Tahun </span>
       </a>
          
   </li>

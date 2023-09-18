@@ -29,6 +29,8 @@
     {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('backend/datatable.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/style.css') }}">
     @stack('css')
@@ -43,8 +45,7 @@
                 @include('layouts.backend.topbar')
                 @include('components.flash-message')
                 @yield('content')
-
-                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+                {{-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
                   <div class="toast-header">
                     <strong class="me-auto">Bootstrap</strong>
                     <small>11 mins ago</small>
@@ -53,8 +54,7 @@
                   <div class="toast-body">
                     Hello, world! This is a toast message.
                   </div>
-                </div>
-                
+                </div> --}}
             </div>
             @include('layouts.backend.footer')
         </div>
