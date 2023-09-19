@@ -118,6 +118,9 @@
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
+  // $('#collapseOne').collapse({
+  //   toggle: false
+  // })
 </script>
 @stack('js')
 

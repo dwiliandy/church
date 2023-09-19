@@ -22,12 +22,12 @@ a:active {
   color: rgb(66, 66, 245);
 }
 
-.card{
+.card-dashboard{
   border-left: solid 8px #007bff;
   box-shadow: #858796 2px;
 }
 
-.card:hover{
+.card-dashboard:hover{
   border-left: solid 8px green;
   transition-duration: .5s;
 

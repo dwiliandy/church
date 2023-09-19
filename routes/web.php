@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\FamilyController;
 use App\Http\Controllers\Admin\YearController;
+use App\Http\Controllers\Admin\IncomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::resource('/groups', GroupController::class)->only(['index','store']);
   Route::resource('/families', FamilyController::class);
   Route::resource('/years', YearController::class)->only(['index','store']);
+  Route::resource('/incomes', IncomeController::class);
 });
 
 

@@ -22,3 +22,22 @@
   color: #552075;
   border: 1px solid #552075;
 }
+.card .card-header[data-toggle=collapse]:after {
+  font-family: "Font Awesome 5 Free"; 
+  content: "\f107";
+  color: #d93e2f;
+}
+.card .card-header[data-toggle=collapse].collapsed::after{
+  /* symbol for "collapsed" panels */
+  font-family: "Font Awesome 5 Free"; 
+  content: '\f106';
+}
+
+.nav-link{
+  padding: 8px 20px !important;
+  font-size: 1.5rem;
+}
+
+.nav-link:hover{
+  background-color: #e7756b;
+}
