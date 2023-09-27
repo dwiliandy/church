@@ -1,5 +1,5 @@
 @extends('layouts.backend.app',[
-    'title' =>'Master Data Pemasukkan'
+    'title' =>'Master Data Pengeluaran'
 ])
 
 @push('css')
@@ -11,9 +11,9 @@
       <ol class="flex">
         <li class="breadcrumb-item "><a class="text-blue-500"href="#">Home</a></li>
         <li class="breadcrumb-item" aria-current="page"><span class="">Master Data<span></li>
-        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Pemasukkan<span></li>
+        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Pengeluaran<span></li>
       </ol>
-      <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Data Pemasukkan</h4>
+      <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Data Pengeluaran</h4>
     </nav>
 
     <div class="row">
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="py-3">
-      <livewire:incomes-table/>
+      <livewire:expenditures-table/>
     </div>
     
 
@@ -33,7 +33,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title text-success" id="createModalLabel">Tambah Data Pemasukkan</h1>
+            <h1 class="modal-title text-success" id="createModalLabel">Tambah Data Pengeluaran</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -73,7 +73,7 @@
         e.preventDefault();
         $('.preloader').show();
         $.ajax({
-          url: "{{ route('incomes.store') }}",
+          url: "{{ route('expenditures.store') }}",
           method: "POST",
           enctype: 'multipart/form-data',
           contentType: false,
@@ -116,27 +116,6 @@
         
       }
 
-      $("#create-existing").on("submit", function (e) {
-        let formData = new FormData(this);
-        e.preventDefault();
-        $('.preloader').show();
-        $.ajax({
-          url: "{{ route('years.store') }}",
-          method: "POST",
-          enctype: 'multipart/form-data',
-          contentType: false,
-          processData: false,
-          data: formData,
-          success: (response) => {
-            
-            $("#createModalExisting").modal("hide");
-            Livewire.emit('refreshLivewireDatatable');
-            flash("success", "Data successfully added");
-          }
-        });
-      });
-
-      
     </script>
   @endpush
 @endsection

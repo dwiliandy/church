@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\FamilyController;
 use App\Http\Controllers\Admin\YearController;
 use App\Http\Controllers\Admin\IncomeController;
+use App\Http\Controllers\Admin\ExpenditureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,12 +35,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::get('/', function () {
     return view('backend.dashboard');
   })->name('admin_dashboard');
-
   Route::resource('/users', UserController::class);
   Route::resource('/groups', GroupController::class)->only(['index','store']);
   Route::resource('/families', FamilyController::class);
   Route::resource('/years', YearController::class)->only(['index','store']);
   Route::resource('/incomes', IncomeController::class);
+  Route::resource('/expenditures', ExpenditureController::class);
 });
 
 

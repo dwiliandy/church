@@ -38,3 +38,8 @@
 .search{
   border: 1px solid #eeee;
 }
+
+.page-show{
+  border: .2rem solid #eee;
+  border-radius: 10px;
+}
