@@ -64,9 +64,47 @@
     </div>
     {{-- End Create Modal --}}
 
+    {{-- Create Modal --}}
+    <div class="modal fade" id="editModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title text-success" id="editModalLabel">Ubagh Data Pengeluaran</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="create">
+              <div class="row">
+                <div class="col-12">
+                  <label for="unique_id" class="form-label">Kode Unik (Max:10 Karakter)<span class="required"> *</span></label>
+                  <input type="text" name="unique_id" class="form-control" id="unique_id">
+                  <span id="uniqueIdCreate" class="error-validation">asd</span>
+                </div>
+                <div class="col-12">
+                  <label for="name" class="form-label">Nama<span class="required"> *</span></label>
+                  <input type="text" name="name" class="form-control" id="name">
+                  <span id="nameCreate" class="error-validation">asd</span>
+                </div>
+              </div>
+
+              <div class="row justify-content-end mt-4">
+                  <button type="button" class="btn btn-secondary px-4 m-2" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-success px-4 m-2">Buat</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- End Create Modal --}}
+
   </div>
 
   @push('js')
+  <script>
+  </script>
     <script>
       $("#create").on("submit", function (e) {
         let formData = new FormData(this);
@@ -80,11 +118,11 @@
           processData: false,
           data: formData,
           success: (response) => {
-            console.log(response);
             $("#createModal").modal("hide");
             $('#add').load(location.href + " #add > *");
             Livewire.emit('refreshLivewireDatatable');
             flash("success", "Data successfully added");
+            $('.toast').toast('show')
           },
           error: function (request, status, error) {
             if(request.responseJSON.errors.unique_id != null){
@@ -112,8 +150,7 @@
         $('#uniqueIdCreate').css("visibility", "hidden");
         $('#unique_id').removeClass("is-invalid");
         $('#nameCreate').css("visibility", "hidden");
-        $('#name').removeClass("is-invalid");
-        
+        $('#name').removeClass("is-invalid"); 
       }
 
     </script>

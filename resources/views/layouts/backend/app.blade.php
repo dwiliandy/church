@@ -25,12 +25,11 @@
     <link href="{{ asset('template/backend') }}/css/style.css" rel="stylesheet">
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    @livewireStyles
     {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    @livewireStyles
     <link rel="stylesheet" href="{{ asset('backend/datatable.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/style.css') }}">
     @stack('css')
@@ -43,18 +42,8 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 @include('layouts.backend.topbar')
-                @include('components.flash-message')
+                @include('notify::messages')
                 @yield('content')
-                {{-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
-                  <div class="toast-header">
-                    <strong class="me-auto">Bootstrap</strong>
-                    <small>11 mins ago</small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                  </div>
-                  <div class="toast-body">
-                    Hello, world! This is a toast message.
-                  </div>
-                </div> --}}
             </div>
             @include('layouts.backend.footer')
         </div>
@@ -115,12 +104,15 @@
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-  // $('#collapseOne').collapse({
-  //   toggle: false
-  // })
+  // Enable Bootstrap tooltips on page load
+  $('[data-toggle="tooltip"]').tooltip();
+
+  // Ensure Livewire updates re-instantiate tooltips
+  if (typeof window.Livewire !== 'undefined') {
+    window.Livewire.hook('message.processed', (message, component) => {
+        $('[data-toggle="tooltip"]').tooltip('dispose').tooltip();
+    });
+  }
 </script>
 @stack('js')
 

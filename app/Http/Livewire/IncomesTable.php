@@ -29,9 +29,8 @@ class IncomesTable extends LivewireDatatable
               ->filterable(),
 
           Column::callback(['id'], function ($id) {
-            return 1;
-            // return view('livewire.status-user-action', ['id' => $id]);
-            })->unsortable()->label('Aksi')->excludeFromExport()
+            return view('backend.livewire.basic-action', ['id' => $id]);
+          })->unsortable()->label('Aksi')->excludeFromExport()
         ];
     }
 }

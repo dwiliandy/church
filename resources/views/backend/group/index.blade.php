@@ -70,7 +70,6 @@
 
   @push('js')
     <script>
-      $('.toast').toast('show')
       $("#create").on("submit", function (e) {
         let formData = new FormData(this);
         e.preventDefault();
