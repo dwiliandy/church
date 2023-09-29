@@ -32,6 +32,7 @@
     @livewireStyles
     <link rel="stylesheet" href="{{ asset('backend/datatable.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/style.css') }}">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
     @stack('css')
 </head>
 
@@ -42,7 +43,6 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 @include('layouts.backend.topbar')
-                @include('notify::messages')
                 @yield('content')
             </div>
             @include('layouts.backend.footer')
@@ -97,6 +97,16 @@
 <!-- Page level custom scripts -->
 <script src="{{ asset('template/backend') }}/js/demo/datatables-demo.js"></script>
 <script src="{{ asset('template/backend') }}/js/demo/datatables-language.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+  $(document).ready(function(){
+    toastr.options = {
+      "newestOnTop": true,
+      "progressBar": true,
+      "positionClass": "toast-bottom-right"
+    }
+  });
+</script>
 @livewireScripts
 <script>
   $.ajaxSetup({

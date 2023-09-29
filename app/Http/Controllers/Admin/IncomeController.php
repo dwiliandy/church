@@ -64,7 +64,6 @@ class IncomeController extends Controller
           'unique_id' => $request->unique_id,
           'name' => $request->name
         ]);
-        toast('Data Pemasukkan Berhasil Diubah!','success','top-right');
         return Response::json(['success' => 'Data Pemasukkan Berhasil Diubah'],200);
       }
       return Response::json(['errors' => $validator->errors()],422);

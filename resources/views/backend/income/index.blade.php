@@ -121,7 +121,7 @@
             success: (response) => {
               $("#createModal").modal("hide");
               Livewire.emit('refreshLivewireDatatable');
-              flash("success", "Data successfully added");
+              toastr.success(response.success);
             },
             error: function (request, status, error) {
               if(request.responseJSON.errors.unique_id != null){
@@ -166,7 +166,7 @@
               $("#edit_unique_id").val(response.unique_id);
               $("#edit_name").val(response.name);
               $("#editModal").modal("show");
-              // resetUpdate();
+              resetUpdate();
             }
           });
         });
@@ -182,6 +182,7 @@
             success: function (data) {
               $("#editModal").modal("hide");
               Livewire.emit('refreshLivewireDatatable');
+              toastr.success(data.success);
             },
             error: function (request, status, error) {
               if(request.responseJSON.errors.unique_id != null){
