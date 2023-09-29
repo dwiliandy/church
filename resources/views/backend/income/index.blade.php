@@ -119,7 +119,7 @@
           </div>
       </div>
     </div>
-{{-- End Destroy Modal --}}
+    {{-- End Destroy Modal --}}
 
   </div>
 
@@ -182,7 +182,6 @@
             method: "GET",
             success: function (response) {
               $("#id").val(id);
-              console.log($("#id").val());
               $("#edit_unique_id").val(response.unique_id);
               $("#edit_name").val(response.name);
               $("#editModal").modal("show");
@@ -235,15 +234,14 @@
         }
 
       // Delete Data
-      $('body').on("click", ".btn-delete", function () {
-        $("#deleteModal").modal("show");
-        var id = $(this).attr('data-id');
-        $('.btn-destroy').attr("data-id",id);
+        $('body').on("click", ".btn-delete", function () {
+          $("#deleteModal").modal("show");
+          var id = $(this).attr('data-id');
+          $('.btn-destroy').attr("data-id",id);
         });
 
         $('body').on("click", ".btn-destroy", function () {
-        
-        var id = $(this).attr('data-id');
+          var id = $(this).attr('data-id');
           $.ajax({
             url: "/admin/incomes/" + id,
             method: "DELETE",

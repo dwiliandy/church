@@ -16,7 +16,6 @@ class IncomeController extends Controller
     }
 
     public function store(Request $request){
-      
       $validator = Validator::make($request->all(), [
         'unique_id' => ['required', 'string', 'max:10', Rule::unique('incomes')->where(function ($query) use ($request) {
           return $query->where('status', 1);

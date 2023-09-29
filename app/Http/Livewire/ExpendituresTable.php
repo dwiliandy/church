@@ -14,6 +14,11 @@ class ExpendituresTable extends LivewireDatatable
     public $clearSearchButton = true;
     public $hideable = 'select';
 
+    public function builder()
+    {
+      return Expenditure::where('status', 1);
+    }
+
     public function columns()
     {
         return [
@@ -28,10 +33,10 @@ class ExpendituresTable extends LivewireDatatable
               ->searchable()
               ->filterable(),
 
+
           Column::callback(['id'], function ($id) {
-            return 1;
-            // return view('livewire.status-user-action', ['id' => $id]);
-            })->unsortable()->label('Aksi')->excludeFromExport()
+            return view('backend.livewire.basic-action', ['id' => $id]);
+          })->unsortable()->label('Aksi')->excludeFromExport()
         ];
     }
 }

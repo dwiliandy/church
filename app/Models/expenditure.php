@@ -11,5 +11,6 @@ class Expenditure extends Model
   protected $fillable = [
     'name',
     'unique_id', 
+    'status'
   ];
 }
