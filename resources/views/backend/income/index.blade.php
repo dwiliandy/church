@@ -101,6 +101,26 @@
     </div>
     {{-- End Edit Modal --}}
 
+    {{-- Destroy Modal --}}
+    <div class="modal fade" id="deleteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="py-3 text-center">
+                      <i class="ni ni-bell-55 ni-3x"></i>
+                      <h2 class="text-danger mt-4"><b>Apakah anda yakin ingin menghapus data ini ?</b></h2>
+                      <p>Saat data dihapus anda tidak akan dapat mengakses lagi</p>
+                  </div>
+              </div>
+              <div class="row justify-content-center p-4">
+                <button type="button" class="btn btn-secondary px-4 m-2" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-danger px-4 m-2 btn-destroy">Yakin</button>
+            </div>
+          </div>
+      </div>
+    </div>
+{{-- End Destroy Modal --}}
+
   </div>
 
   @push('js')
@@ -214,6 +234,26 @@
           
         }
 
+      // Delete Data
+      $('body').on("click", ".btn-delete", function () {
+        $("#deleteModal").modal("show");
+        var id = $(this).attr('data-id');
+        $('.btn-destroy').attr("data-id",id);
+        });
+
+        $('body').on("click", ".btn-destroy", function () {
+        
+        var id = $(this).attr('data-id');
+          $.ajax({
+            url: "/admin/incomes/" + id,
+            method: "DELETE",
+            success: function (response) {
+              $("#deleteModal").modal("hide");
+              Livewire.emit('refreshLivewireDatatable');
+              toastr.error(response.success);
+            }
+          });
+        });
       
     </script>
   @endpush

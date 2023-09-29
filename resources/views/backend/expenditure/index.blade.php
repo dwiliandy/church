@@ -122,7 +122,6 @@
             $('#add').load(location.href + " #add > *");
             Livewire.emit('refreshLivewireDatatable');
             flash("success", "Data successfully added");
-            $('.toast').toast('show')
           },
           error: function (request, status, error) {
             if(request.responseJSON.errors.unique_id != null){

@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\Income;
 use Mediconesystems\LivewireDatatables\Column;
-use Mediconesystems\LivewireDatatables\NumberColumn;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 
 class IncomesTable extends LivewireDatatable
@@ -13,6 +12,11 @@ class IncomesTable extends LivewireDatatable
     public $exportable = true;
     public $clearSearchButton = true;
     public $hideable = 'select';
+
+    public function builder()
+    {
+      return Income::where('status', 1);
+    }
 
     public function columns()
     {

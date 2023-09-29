@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use toastr;
 use App\Models\Income;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -17,8 +16,11 @@ class IncomeController extends Controller
     }
 
     public function store(Request $request){
+      
       $validator = Validator::make($request->all(), [
-        'unique_id' => ['required', 'string', 'max:10','unique:incomes'],
+        'unique_id' => ['required', 'string', 'max:10', Rule::unique('incomes')->where(function ($query) use ($request) {
+          return $query->where('status', 1);
+        })],
         'name' => ['required', 'string', 'max:255']
       ], array(
           'unique_id.unique' => 'Kode Unik Sudah Ada',
@@ -49,7 +51,9 @@ class IncomeController extends Controller
     public function update(Request $request, $id){
       $income = Income::where('id', base64_decode($id))->first();
       $validator = Validator::make($request->all(), [
-        'unique_id' => ['required', 'string', 'max:10',Rule::unique('incomes')->ignore($income)],
+        'unique_id' => ['required', 'string', 'max:10', Rule::unique('incomes')->ignore($income)->where(function ($query) use ($request) {
+          return $query->where('status', 1);
+        })],
         'name' => ['required', 'string', 'max:255']
       ], array(
           'unique_id.unique' => 'Kode Unik Sudah Ada',
@@ -67,5 +71,10 @@ class IncomeController extends Controller
         return Response::json(['success' => 'Data Pemasukkan Berhasil Diubah'],200);
       }
       return Response::json(['errors' => $validator->errors()],422);
+    }
+
+    public function destroy($id){
+      Income::where('id', base64_decode($id))->update(['status' => 0]);
+      return Response::json(['success' => 'Data Pemasukkan Berhasil Dihapus'],200);
     }
 }
