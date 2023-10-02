@@ -9,6 +9,7 @@ use App\Models\Expenditure;
 use Illuminate\Http\Request;
 use App\Models\ExpenditureYear;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Response;
 
 class YearController extends Controller
 {
@@ -45,6 +46,34 @@ class YearController extends Controller
           'target' => 0
         ]);
       }
-      return true;
+      return Response::json(['success' => 'Data Tahun Berhasil Dibuat'],201);
+    }
+
+    // Years Income
+    public function getIncomes($id){
+      $year = Year::where('id', base64_decode($id))->first();
+      return view('backend.year.getIncome', compact('year'));
+    }
+
+    public function updateIncomes(Request $request){
+      foreach($request['data'] as $key => $data){
+        $data = str_replace(".","",$data);
+        IncomeYear::where('id', base64_decode($key))->update(['target' => $data]);
+      }
+      return Response::json(['success' => 'Data Pemasukkan Tahun Berhasil Diubah'],200);
+    }
+
+    // Years Expenditure
+    public function getExpenditures($id){
+      $year = Year::where('id', base64_decode($id))->first();
+      return view('backend.year.getExpenditure', compact('year'));
+    }
+
+    public function updateExpenditures(Request $request){
+      foreach($request['data'] as $key => $data){
+        $data = str_replace(".","",$data);
+        ExpenditureYear::where('id', base64_decode($key))->update(['target' => $data]);
+      }
+      return Response::json(['success' => 'Data Pengeluaran Tahun Berhasil Diubah'],200);
     }
 }

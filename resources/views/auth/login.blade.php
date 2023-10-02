@@ -62,7 +62,7 @@
   <main class="form-signin w-100 m-auto">
     <form method="POST" action="{{ route('login') }}">
     @csrf
-       <img class="mb-4 img-fluid  mx-auto d-block" src="{{ asset('images/gmim.png') }}" alt="" width="200" height="200">
+       <img class="mb-4 img-fluid  mx-auto d-block" src="{{ asset('images/logo.png') }}" alt="" width="200" height="200">
     @if ($errors->any())
       <div class="alert alert-danger border-left-danger" role="alert">
           {{ $errors->first() }}

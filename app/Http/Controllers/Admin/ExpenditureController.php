@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Year;
 use App\Models\Expenditure;
 use Illuminate\Http\Request;
+use App\Models\ExpenditureYear;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
@@ -30,10 +32,19 @@ class ExpenditureController extends Controller
       );
 
       if($validator->passes()){
-        Expenditure::create([
+        $expenditure = Expenditure::create([
           'unique_id' => $request->unique_id,
           'name' => $request->name
         ]);
+
+        $years = Year::where('name', '>=', date('Y'))->get();
+        foreach ($years as $year){
+          ExpenditureYear::create([
+            'expenditure_id' => $expenditure->id,
+            'year_id' => $year->id,
+            'target' => 0
+          ]);
+        }
         return Response::json(['success' => 'Data Pengeluaran Berhasil Dibuat'],201);
       }
       return Response::json(['errors' => $validator->errors()],422);

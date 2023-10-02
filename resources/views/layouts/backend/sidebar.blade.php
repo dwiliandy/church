@@ -2,9 +2,7 @@
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin_dashboard') }}">
-      <div class="sidebar-brand-icon">
-        <i class="fas fa-church"></i>
-      </div>
+        <img  src="{{ asset('images') }}/navbar-icon.png" alt="" style="max-height: 60px">
       <div class="sidebar-brand-text mx-3">KGPM PNIEL SENDANGAN</div>
   </a>
 

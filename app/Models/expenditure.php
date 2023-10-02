@@ -13,4 +13,11 @@ class Expenditure extends Model
     'unique_id', 
     'status'
   ];
+
+
+  // Relation Data
+  public function expenditure_years()
+  {
+    return $this->hasMany(ExpenditureYear::class, 'exenditure_id', 'id');
+  }
 }

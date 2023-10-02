@@ -14,4 +14,15 @@ class ExpenditureYear extends Model
       'expenditure_id',
       'target',
   ];
+
+    // Relation Data
+    public function expenditure()
+    {
+      return $this->belongsTo(Expenditure::class,'expenditure_id','id');
+    }
+  
+    public function year()
+    {
+      return $this->belongsTo(Year::class,'year_id','id');
+    }
 }

@@ -82,3 +82,48 @@
   padding-left: .5rem;
   visibility: hidden;
 }
+
+#toast-container>div{
+  opacity: 1 !important;
+}
+
+/* Button */
+.btn-income{
+  color:rgb(56, 238, 86);
+  padding: 2px;
+}
+
+.btn-income:hover{
+  color: white;
+  background-color: rgb(56, 238, 86);
+}
+.btn-expenditure{
+  color:rgb(252, 90, 79);
+  padding: 2px;
+}
+
+.btn-expenditure:hover{
+  color: white;
+  background-color:rgb(252, 90, 79);
+}
+
+.floating-button{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #3b61d1;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.floating-button:hover{
+  width: 60px;
+  height: 60px;
+  color: #3b61d1;
+  background-color: #FFF;
+  border: 2px solid #3b61d1;
+}

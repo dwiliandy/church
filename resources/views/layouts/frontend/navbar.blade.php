@@ -2,7 +2,8 @@
 <nav id="navbar" class="navbar navbar-expand-lg pb-3 p-lg-0 sticky-top bg-purple" data-bs-theme="dark" >
   <div class="container">
     <a class="navbar-brand" id="logo" href="#">
-      <img  src="{{ asset('images') }}/sinodegmim.png" alt="" style="max-height: 60px">
+      <img  src="{{ asset('images') }}/navbar-icon.png" alt="" style="max-height: 60px">
+      {{-- <h3 class="text-center">KGPM PNIEL <br>KAWANGKOAN</h3> --}}
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

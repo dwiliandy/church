@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\IncomeYear;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Year extends Model
 {
@@ -11,4 +12,16 @@ class Year extends Model
     protected $fillable = [
         'name',
     ];
+
+
+    // Relation Data
+    public function income_years()
+    {
+      return $this->hasMany(IncomeYear::class, 'year_id', 'id');
+    }
+
+    public function expenditure_years()
+    {
+      return $this->hasMany(ExpenditureYear::class, 'year_id', 'id');
+    }
 }

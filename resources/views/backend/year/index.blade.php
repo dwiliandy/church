@@ -10,8 +10,7 @@
     <nav class="breadcrumb flex-col">
       <ol class="flex">
         <li class="breadcrumb-item "><a class="text-blue-500"href="#">Home</a></li>
-        <li class="breadcrumb-item" aria-current="page"><span class="">Master Data<span></li>
-        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Tahun<span></li>
+        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Master Data Tahun<span></li>
       </ol>
       <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Data Tahun</h4>
     </nav>
@@ -124,7 +123,7 @@
             $("#createModal").modal("hide");
             $('#add').load(location.href + " #add > *");
             Livewire.emit('refreshLivewireDatatable');
-            flash("success", "Data successfully added");
+            toastr.success(response.success);
           }
         });
       });
@@ -144,7 +143,7 @@
             
             $("#createModalExisting").modal("hide");
             Livewire.emit('refreshLivewireDatatable');
-            flash("success", "Data successfully added");
+            toastr.success(response.success);
           }
         });
       });

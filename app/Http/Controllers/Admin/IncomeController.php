@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Year;
 use App\Models\Income;
+use App\Models\IncomeYear;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
@@ -30,10 +32,19 @@ class IncomeController extends Controller
       );
 
       if($validator->passes()){
-        Income::create([
+        $income = Income::create([
           'unique_id' => $request->unique_id,
           'name' => $request->name
         ]);
+
+        $years = Year::where('name', '>=', date('Y'))->get();
+        foreach ($years as $year){
+          IncomeYear::create([
+            'income_id' => $income->id,
+            'year_id' => $year->id,
+            'target' => 0
+          ]);
+        }
         return Response::json(['success' => 'Data Pemasukkan Berhasil Dibuat'],201);
       }
       return Response::json(['errors' => $validator->errors()],422);
