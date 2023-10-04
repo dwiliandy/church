@@ -59,6 +59,17 @@
           <span>Tahun </span>
       </a>
   </li>
+  <div class="sidebar-heading mt-2">
+    <span class="text-md font-bold uppercase">
+      Data Keuangan
+    </span>
+  </div>
+  <li class="nav-item {{ Request::routeIs('year-data') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('year-data') }}">
+      <i class="far fa-calendar"></i>
+        <span>Tahun </span>
+    </a>
+  </li>
   <!-- Sidebar Toggler (Sidebar) -->
   <div class="text-center d-none d-md-inline pt-4">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>

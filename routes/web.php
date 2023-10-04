@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\FamilyController;
 use App\Http\Controllers\Admin\YearController;
 use App\Http\Controllers\Admin\IncomeController;
 use App\Http\Controllers\Admin\ExpenditureController;
+use App\Http\Controllers\Admin\FinancialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   })->name('admin_dashboard');
 
   // Resource Route
+    // Master Data
   Route::resource('/users', UserController::class);
   Route::resource('/groups', GroupController::class)->only(['index','store']);
   Route::resource('/families', FamilyController::class);
@@ -46,11 +48,17 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::resource('/incomes', IncomeController::class);
   Route::resource('/expenditures', ExpenditureController::class);
 
+      // Admin Data
+    Route::resource('/data-year/{year}/financials', FinancialController::class);
+
   // Single Route
+    // Year
   Route::get('/years/{id}/incomes', [YearController::class,'getIncomes'])->name('get-incomes');
   Route::post('/years/incomes', [YearController::class,'updateIncomes'])->name('update-incomes');
   Route::get('/years/{id}/expenditures', [YearController::class,'getExpenditures'])->name('get-expenditures');
   Route::post('/years/expenditures', [YearController::class,'updateExpenditures'])->name('update-expenditures');
+  Route::get('/years-data', [YearController::class,'yearData'])->name('year-data');
+
 });
 
 

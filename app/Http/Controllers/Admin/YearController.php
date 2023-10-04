@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Response;
 
 class YearController extends Controller
 {
+
+  // Master Data
     public function index(){
       $years = Year::count();
       $this_year = date('Y', strtotime('-5 years'));
@@ -76,4 +78,11 @@ class YearController extends Controller
       }
       return Response::json(['success' => 'Data Pengeluaran Tahun Berhasil Diubah'],200);
     }
+  // End Master Data
+
+  // Admin Data
+  public function yearData(){
+    return view('backend.year.index-data');
+  }
+  // Admin Data
 }
