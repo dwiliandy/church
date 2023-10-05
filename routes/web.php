@@ -58,6 +58,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::get('/years/{id}/expenditures', [YearController::class,'getExpenditures'])->name('get-expenditures');
   Route::post('/years/expenditures', [YearController::class,'updateExpenditures'])->name('update-expenditures');
   Route::get('/years-data', [YearController::class,'yearData'])->name('year-data');
+  Route::get('/get-finance-data/{data}/{year}', [FinancialController::class,'getFinance'])->name('get-finance-data');
 
 });
 
