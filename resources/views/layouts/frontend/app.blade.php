@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
-        {{ env('APP_NAME') }} | {{ $title }}
+        @if (DB::table('web_settings')->first()->website_name == NULL)
+          {{ env('APP_NAME') }} | {{ $title }}
+        @else
+        {{ DB::table('web_settings')->first()->website_name }} | {{ $title }}
+        @endif
     </title>
     <link rel="icon" href="{{ asset('storage/' . DB::table('web_settings')->first()->logo) }}">
   {{-- Bootstrap --}}
