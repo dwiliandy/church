@@ -8,7 +8,7 @@
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-      <a class="nav-link " href="/"><i class="fas fa-cogs text-blue-500 hover:text-blue-700"></i></a>
+      <a class="nav-link " href="{{ route('settings.index') }}"><i class="fas fa-cogs text-blue-500 hover:text-blue-700"></i></a>
     </li>
     <li class="nav-item">
       <a class="nav-link " href="/"><i class="fas fa-home text-blue-500 hover:text-blue-700"></i></a>

@@ -1,9 +1,9 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin_dashboard') }}">
-        <img  src="{{ asset('images') }}/navbar-icon.png" alt="" style="max-height: 60px">
-      <div class="sidebar-brand-text mx-3">KGPM PNIEL SENDANGAN</div>
+  <a id="web_logo" class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin_dashboard') }}">
+        <img  src="{{ asset('storage/' . DB::table('web_settings')->first()->logo) }}" alt="" style="max-height: 60px">
+      <div class="sidebar-brand-text mx-3">{{ DB::table('web_settings')->first()->website_name }}</div>
   </a>
 
   <!-- Divider -->

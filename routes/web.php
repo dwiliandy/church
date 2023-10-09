@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\YearController;
 use App\Http\Controllers\Admin\IncomeController;
 use App\Http\Controllers\Admin\ExpenditureController;
 use App\Http\Controllers\Admin\FinancialController;
+use App\Http\Controllers\Admin\WebSettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::resource('/years', YearController::class)->only(['index','store']);
   Route::resource('/incomes', IncomeController::class);
   Route::resource('/expenditures', ExpenditureController::class);
+  Route::resource('/settings', WebSettingController::class)->only(['index']);
 
       // Admin Data
     Route::resource('/data-year/{year}/financials', FinancialController::class);
@@ -59,6 +61,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::post('/years/expenditures', [YearController::class,'updateExpenditures'])->name('update-expenditures');
   Route::get('/years-data', [YearController::class,'yearData'])->name('year-data');
   Route::get('/get-finance-data/{data}/{year}', [FinancialController::class,'getFinance'])->name('get-finance-data');
+    // Setting
+  Route::post('/update-setting', [WebSettingController::class,'updateSetting'])->name('update-setting');
 
 });
 

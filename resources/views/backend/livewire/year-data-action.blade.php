@@ -5,13 +5,11 @@
 </a>
 
 <a class="btn p-1 rounded btn-income" data-toggle="tooltip" data-placement="bottom" title="Data Pemasukkan" href="{{ route('get-incomes',['id' => base64_encode($id)]) }}">
-  <button>
-    <i class="fas fa-money-bill-wave-alt"></i>
-  </button>
+  <i class="bi bi-wallet2" style="font-weight: bold;"></i>
 </a>
 
 <a class="btn p-1 rounded btn-expenditure" data-toggle="tooltip" data-placement="bottom" title="Data Pengeluaran" href="{{ route('get-expenditures',['id' => base64_encode($id)]) }}">
   <button>
-    <i class="fas fa-hand-holding-usd fa-flip-vertical"></i>
+    <i class="bi bi-basket2-fill" style="font-weight: bold;"></i>
   </button>
 </a>
