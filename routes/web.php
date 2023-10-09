@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::get('/get-finance-data/{data}/{year}', [FinancialController::class,'getFinance'])->name('get-finance-data');
     // Setting
   Route::post('/update-setting', [WebSettingController::class,'updateSetting'])->name('update-setting');
-
+  Route::get('/get-selected-value/{params}', [WebSettingController::class,'getSelectedValue'])->name('get-selected-value');
 });
 
 

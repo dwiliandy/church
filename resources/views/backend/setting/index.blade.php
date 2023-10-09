@@ -45,12 +45,47 @@
               <img id="updatePreview" style="max-height: 100px;"  class="img-fluid rounded mx-auto d-block"/>
             @endif
           </div>
+          <div class="form-group col-md-4">
+            <label>Approval Pemasukkan <span class="required">*</span></label>
+            <select class="form-control select2" style="width: 100%" name="income_approver[]" multiple="multiple" id="income_approver">
+              @foreach ($users as $user)
+              <option value="{{base64_encode($user->id) }}">{{ $user->name }}</option>                    
+              @endforeach
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label>Approval Pengeluaran <span class="required">*</span></label>
+            <select class="form-control select2" style="width: 100%" name="expenditure_approver[]" multiple="multiple" id="expenditure_approver">
+              @foreach ($users as $user)
+              <option value="{{base64_encode($user->id) }}">{{ $user->name }}</option>                    
+              @endforeach
+            </select>
+          </div>
         </div>
       </form>
     </div>
   </div>
   @push('js')
   <script>
+
+    $(document).ready(function(){
+      $.ajax({
+        url: "/admin/get-selected-value/income_approver",
+        method: "GET",
+        success: function (data) {
+          $("#income_approver").select2().val(data).trigger('change');
+        }
+      });
+
+      $.ajax({
+        url: "/admin/get-selected-value/expenditure_approver",
+        method: "GET",
+        success: function (data) {
+          $("#expenditure_approver").select2().val(data).trigger('change');
+        }
+      });
+    });
+
     logo.onchange = evt => {
       const [file] = logo.files
       if (file) {
@@ -59,21 +94,29 @@
     }
 
     $("#editForm").on("submit", function (e) {
-    e.preventDefault();
-    let formData = new FormData(this);
-    $.ajax({
-      url: "/admin/update-setting",
-      method: "POST",
-      enctype: 'multipart/form-data',
-      contentType: false,
-      processData: false,
-      data: formData,
-      success: function (response) {
-        toastr.success(response.success);
-        $('#web_logo').load(location.href + " #web_logo > *");
-      }
+      e.preventDefault();
+      let formData = new FormData(this);
+      $.ajax({
+        url: "/admin/update-setting",
+        method: "POST",
+        enctype: 'multipart/form-data',
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function (response) {
+          toastr.success(response.success);
+          window.setTimeout(function(){
+            location.reload();
+          }, 3000);
+        }
+      });
     });
-  });
+
+    $(".select2").select2({
+      placeholder: 'Select Data',
+      defaultView: 'dropdown',
+      allowClear: true  
+    });
   </script>
   @endpush
 @endsection

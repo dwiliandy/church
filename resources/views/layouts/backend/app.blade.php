@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="{{ asset('backend/style.css') }}">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Select2-->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     @stack('css')
 </head>
 
@@ -88,6 +90,8 @@
 <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('template/backend') }}/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Select2-->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('template/backend') }}/js/sb-admin-2.min.js"></script>

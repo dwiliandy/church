@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\User;
 use App\Models\WebSetting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,7 +13,8 @@ class WebSettingController extends Controller
 {
     public function index(){
       $setting = WebSetting::first();
-      return view('backend.setting.index', compact('setting'));
+      $users = User::all();
+      return view('backend.setting.index', compact('setting','users'));
     }
 
     public function updateSetting(Request $request){
@@ -44,7 +46,35 @@ class WebSettingController extends Controller
           'website_name' =>  $validatedData['web_name']
         ]);
       }
+
+      User::query()->update([
+        'approval_income' => 0,
+        'approval_expenditure' => 0
+      ]);
+
+      foreach($request->income_approver as $income){
+        User::where('id', base64_decode($income))->update(['approval_income' => 1]);
+      }
+      
+      foreach($request->expenditure_approver as $expenditure){
+        User::where('id', base64_decode($expenditure))->update(['approval_expenditure' => 1]);
+      }
       
       return Response::json(['success' => 'Pengaturan Website berhasil diubah'],200);
+    }
+
+    public function getSelectedValue($params){
+      $users_encrypt = [];
+      if($params == 'income_approver'){
+        foreach(User::where('approval_income',1)->get() as $user){
+          array_push($users_encrypt, base64_encode($user->id));
+        }
+      }
+      elseif($params == 'expenditure_approver'){
+        foreach(User::where('approval_expenditure',1)->get() as $user){
+          array_push($users_encrypt, base64_encode($user->id));
+        }
+      }
+      return $users_encrypt;
     }
 }
