@@ -11,7 +11,7 @@
         {{ env('APP_NAME') }} | {{ $title }}
     </title>
 
-    <link rel="icon" href="{{ asset('images') }}/icon.png">
+    <link rel="icon" href="{{ asset('storage/' . DB::table('web_settings')->first()->logo) }}">
 
     {{-- SB-admin --}}
     <link href="{{ asset('template/backend') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

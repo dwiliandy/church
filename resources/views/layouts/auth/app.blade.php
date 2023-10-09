@@ -11,7 +11,7 @@
         {{ env('APP_NAME') }} | {{ $title }}
     </title>
     
-    <link rel="icon" href="{{ asset('images') }}/icon.png">
+    <link rel="icon" href="{{ asset('storage/' . DB::table('web_settings')->first()->logo) }}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"

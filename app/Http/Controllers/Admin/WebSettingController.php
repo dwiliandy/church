@@ -18,12 +18,12 @@ class WebSettingController extends Controller
     public function updateSetting(Request $request){
       if($request->logo != NULL){
         $validatedData = $request->validate([
-          'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+          'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
           'web_name' => 'required'
         ],
         [
           'web_name.required' => 'Nama Website harus diisi',
-          'logo.mimes' => 'Logo harus berbentuk gambar(jpeg, png, gif, svg)',
+          'logo.mimes' => 'Logo harus berbentuk gambar(jpeg, png, gif, svg, webp)',
           'logo.max' => 'Logo harus kurang dari 2MB',
           'logo.image' => 'File harus berbentuk gambar'
         ]);
