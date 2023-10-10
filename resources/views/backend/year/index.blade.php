@@ -140,7 +140,6 @@
           processData: false,
           data: formData,
           success: (response) => {
-            
             $("#createModalExisting").modal("hide");
             Livewire.emit('refreshLivewireDatatable');
             toastr.success(response.success);

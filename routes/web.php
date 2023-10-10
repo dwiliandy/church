@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\IncomeController;
 use App\Http\Controllers\Admin\ExpenditureController;
 use App\Http\Controllers\Admin\FinancialController;
 use App\Http\Controllers\Admin\WebSettingController;
+use App\Http\Controllers\Admin\ApprovalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +50,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::resource('/incomes', IncomeController::class);
   Route::resource('/expenditures', ExpenditureController::class);
   Route::resource('/settings', WebSettingController::class)->only(['index']);
-
-      // Admin Data
+  
+  // Admin Data
+    Route::resource('/approvals', ApprovalController::class)->only(['index']);
     Route::resource('/data-year/{year}/financials', FinancialController::class);
 
   // Single Route
@@ -64,6 +66,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
     // Setting
   Route::post('/update-setting', [WebSettingController::class,'updateSetting'])->name('update-setting');
   Route::get('/get-selected-value/{params}', [WebSettingController::class,'getSelectedValue'])->name('get-selected-value');
+  // Submission
+Route::get('/submissions', [FinancialController::class,'submissions'])->name('submissions');
 });
 
 

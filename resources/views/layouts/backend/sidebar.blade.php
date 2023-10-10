@@ -70,6 +70,18 @@
         <span>Tahun </span>
     </a>
   </li>
+  <li class="nav-item {{ Request::routeIs('submissions') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('submissions') }}">
+      <i class="bi bi-file-earmark-plus"></i>
+        <span>Pengajuan </span> 
+    </a>
+  </li>
+  <li class="nav-item {{ Request::routeIs('year-data') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('year-data') }}">
+      <i class="bi bi-card-checklist"></i>
+        <span>Persetujuan </span><span class="badge badge-danger">{{ DB::table('approvals')->where('approver',Auth::user()->id)->where('status','Menunggu')->count() }}</span> 
+    </a>
+  </li>
   <!-- Sidebar Toggler (Sidebar) -->
   <div class="text-center d-none d-md-inline pt-4">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>

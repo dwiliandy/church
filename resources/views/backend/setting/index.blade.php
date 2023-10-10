@@ -45,7 +45,7 @@
               <img id="updatePreview" style="max-height: 100px;"  class="img-fluid rounded mx-auto d-block"/>
             @endif
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
             <label>Approval Pemasukkan <span class="required">*</span></label>
             <select class="form-control select2" style="width: 100%" name="income_approver[]" multiple="multiple" id="income_approver">
               @foreach ($users as $user)
@@ -53,7 +53,7 @@
               @endforeach
             </select>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
             <label>Approval Pengeluaran <span class="required">*</span></label>
             <select class="form-control select2" style="width: 100%" name="expenditure_approver[]" multiple="multiple" id="expenditure_approver">
               @foreach ($users as $user)

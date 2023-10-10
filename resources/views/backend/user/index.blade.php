@@ -17,7 +17,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#createModal">
+        <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#createModal" onclick="resetCreate()">
           Tambah Data
         </button>
       </div>
@@ -40,30 +40,41 @@
           <div class="modal-body">
             <form id="create">
               <div class="row">
-                <div class="col-md-6 mt-3">
-                  <div class="form-floating">
-                    <input type="text" name="name" class="form-control" id="username" placeholder="Username">
-                  </div>
-                </div>
-                <div class="col-md-6 mt-3">
-                  <div class="form-floating">
-                    <input type="text" name="username" class="form-control" id="username" placeholder="Username">
-                  </div>
-                </div>
                 <div class="col-md-12 mt-3">
                   <div class="form-floating">
-                    <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+                    <label for="name" class="form-label">Nama<span class="required"> *</span></label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Nama">
+                    <span id="nameCreate" class="error-validation"></span>
                   </div>
                 </div>
-                <div class="col-md-6 mt-3">
+                <div class="col-md-12">
                   <div class="form-floating">
+                    <label for="name" class="form-label">Username<span class="required"> *</span></label>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+                    <span id="usernameCreate" class="error-validation"></span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating">
+                    <label for="name" class="form-label">Email<span class="required"> *</span></label>
+                    <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+                    <span id="emailCreate" class="error-validation"></span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <label for="name" class="form-label">Kata Sandi<span class="required"> *</span></label>
                     <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                   </div>
                 </div>
-                <div class="col-md-6 mt-3">
+                <div class="col-md-6">
                   <div class="form-floating">
+                    <label for="name" class="form-label">Konfirmasi Kata Sandi<span class="required"> *</span></label>
                     <input type="password" name="password_confirmation" class="form-control" id="password" placeholder="Password">
                   </div>
+                </div>
+                <div class="col-md-12">
+                  <span id="passwordCreate" class="error-validation"></span>
                 </div>
               </div>
 
@@ -96,10 +107,57 @@
             $('#create').trigger("reset");
             $("#createModal").modal("hide");
             Livewire.emit('refreshLivewireDatatable');
-            flash("success", "Data successfully added");
-          }
+            toastr.success(response.success);
+          },
+          error: function (request, status, error) {
+            if(request.responseJSON.errors.name != null){
+              $('#nameCreate').css("visibility", "visible");
+              $('#nameCreate').text(request.responseJSON.errors.name);
+              $('#name').addClass("is-invalid");
+            }else{
+              $('#nameCreate').css("visibility", "hidden");
+              $('#name').removeClass("is-invalid");
+            }
+            if(request.responseJSON.errors.username != null){
+              $('#usernameCreate').css("visibility", "visible");
+              $('#usernameCreate').text(request.responseJSON.errors.username);
+              $('#username').addClass("is-invalid");
+            }else{
+              $('#usernameCreate').css("visibility", "hidden");
+              $('#username').removeClass("is-invalid");
+            }
+            if(request.responseJSON.errors.email != null){
+              $('#emailCreate').css("visibility", "visible");
+              $('#emailCreate').text(request.responseJSON.errors.email);
+              $('#email').addClass("is-invalid");
+            }else{
+              $('#emailCreate').css("visibility", "hidden");
+              $('#email').removeClass("is-invalid");
+            }
+            if(request.responseJSON.errors.password != null){
+              $('#passwordCreate').css("visibility", "visible");
+              $('#passwordCreate').text(request.responseJSON.errors.password);
+              $('#password').addClass("is-invalid");
+            }else{
+              $('#passwordCreate').css("visibility", "hidden");
+              $('#password').removeClass("is-invalid");
+            }
+          },
+         
         });
       });
+
+      function resetCreate(){
+      $('#create').trigger("reset");
+      $('#nameCreate').css("visibility", "hidden");
+      $('#name').removeClass("is-invalid");
+      $('#usernameCreate').css("visibility", "hidden");
+      $('#username').removeClass("is-invalid");
+      $('#emailCreate').css("visibility", "hidden");
+      $('#email').removeClass("is-invalid");
+      $('#passwordCreate').css("visibility", "hidden");
+      $('#password').removeClass("is-invalid");
+    }
     </script>
   @endpush
 @endsection

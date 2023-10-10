@@ -15,7 +15,7 @@ class UserController extends Controller
     }
 
     public function store(Request $request){
-      $request->validate([
+      $validatedData = $request->validate([
         'name' => 'required',
         'email' => 'required|string|max:255|unique:users',
         'username' => 'required|string|max:255|unique:users',
@@ -28,18 +28,17 @@ class UserController extends Controller
           'email.unique' => 'Email tidak boleh sama',
           'email.required' => 'Username harus diisi',
           'email.unique' => 'Username tidak boleh sama',
-          'password.required' => 'Password baru harus diisi',
-          'password_confirmation.required' => 'Konfirmasi password baru harus diisi',
-          'password.min' => 'Password minimal 6 karakter'
+          'password.required' => 'Kata Sandi baru harus diisi',
+          'password.confirmed' => 'Konfirmasi kata sandi tidak cocok',
+          'password.min' => 'Kata Sandi minimal 6 karakter'
       ]);
-
       $user = User::create([
         'name' => $request->name,
         'username' => $request->username,
         'email' => $request->email,
         'password' => bcrypt($request->password)
       ]);
-      return response()->json(['success' => '1'],201);
+      return response()->json(['success' => 'Pengguna baru berhasil dibuat'],201);
 
     }
 }
