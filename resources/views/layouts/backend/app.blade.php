@@ -27,15 +27,14 @@
     <link href="{{ asset('template/backend') }}/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="{{ asset('template/backend') }}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="{{ asset('template/backend') }}/css/style.css" rel="stylesheet">
+    @livewireStyles
+    <link href="{{ asset('template/backend') }}/css/datatable.css" rel="stylesheet">
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    @livewireStyles
-    <link rel="stylesheet" href="{{ asset('backend/datatable.css') }}">
-    <link rel="stylesheet" href="{{ asset('backend/style.css') }}">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Select2-->
@@ -44,7 +43,6 @@
 </head>
 
 <body id="page-top">
-
     <div id="wrapper">
         @include('layouts.backend.sidebar')
         <div id="content-wrapper" class="d-flex flex-column">
@@ -55,7 +53,6 @@
             @include('layouts.backend.footer')
         </div>
     </div>
-
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -82,8 +79,6 @@
             </div>
         </div>
     </div>
-
-
 </body>
 <script src="{{ asset('template/backend') }}/vendor/jquery/jquery.min.js"></script>
 <script src="{{ asset('template/backend') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
