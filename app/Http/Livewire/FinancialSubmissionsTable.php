@@ -98,6 +98,14 @@ class FinancialSubmissionsTable extends LivewireDatatable
             ->label('Jumlah Pengeluaran')
             ->searchable()
             ->filterable(),
+
+            Column::callback(['financials.id'], function ($id) { 
+              return view('backend.livewire.submission-action', ['id' => $id]);
+            })
+            ->unsortable()
+            ->label('Aksi')
+            ->excludeFromExport()
+            ->minWidth('190px')
         ];
     }
 

@@ -170,6 +170,9 @@
           $('#accordionSidebar').load(location.href + " #accordionSidebar > *");
           Livewire.emit('refreshLivewireDatatable');
           toastr.success(response.success);
+          window.setTimeout(function(){
+            window.location.href = "/admin/submissions-detail/"+response.id;
+          }, 3000);
         },
         error: function (request, status, error) {
           if(request.responseJSON.errors.date != null){

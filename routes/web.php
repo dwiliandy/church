@@ -67,7 +67,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::post('/update-setting', [WebSettingController::class,'updateSetting'])->name('update-setting');
   Route::get('/get-selected-value/{params}', [WebSettingController::class,'getSelectedValue'])->name('get-selected-value');
   // Submission
-Route::get('/submissions', [FinancialController::class,'submissions'])->name('submissions');
+  Route::get('/submissions', [FinancialController::class,'submissions'])->name('submissions');
+  Route::get('/submissions-detail/{id}', [FinancialController::class,'submissionDetail'])->name('submission-detail');
 });
 
 

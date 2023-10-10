@@ -29,4 +29,9 @@ class Financial extends Model
   {
     return $this->belongsTo(ExpenditureYear::class,'expenditure_year_id','id');
   }
+
+  public function user()
+  {
+    return $this->belongsTo(User::class,'action_user','id');
+  }
 }

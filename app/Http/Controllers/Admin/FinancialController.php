@@ -53,8 +53,13 @@ class FinancialController extends Controller
             ]);
 
             foreach(User::where('approval_income',1)->get() as $user){
+              if($user->id == Auth::user()->id){
+                $status = 'Diterima';
+              }else{
+                $status = 'Menunggu'; 
+              }
               Approval::create([
-                'status' => 'Menunggu',
+                'status' => $status,
                 'approver' => $user->id,
                 'financial_id' => $financial->id
               ]);
@@ -71,14 +76,19 @@ class FinancialController extends Controller
             ]);
 
             foreach(User::where('approval_expenditure',1)->get() as $user){
+              if($user->id == Auth::user()->id){
+                $status = 'Diterima';
+              }else{
+                $status = 'Menunggu'; 
+              }
               Approval::create([
-                'status' => 'Menunggu',
+                'status' => $status,
                 'approver' => $user->id,
                 'financial_id' => $financial->id
               ]);
             }
           }
-          return Response::json(['success' => 'Data Transaksi Berhasil Dibuat'],201);
+          return Response::json(['success' => 'Data Transaksi Berhasil Dibuat', 'id' => base64_encode($financial->id)],201);
         }
         return Response::json(['errors' => $validator->errors()],422);
       }
@@ -128,5 +138,10 @@ class FinancialController extends Controller
 
     public function submissions(){
       return view('backend.financial.submission');
+    }
+
+    public function submissionDetail($finance){
+      $financial = Financial::where('id', base64_decode($finance))->first();
+      return view('backend.financial.submission-show', \compact('financial'));
     }
 }

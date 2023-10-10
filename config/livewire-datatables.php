@@ -95,8 +95,8 @@ return [
 
     'default_classes' => [
         'row' => [
-            'even' => 'divide-x divide-white text-sm text-gray-900 bg-white',
-            'odd' => 'divide-x divide-blue-100 text-sm text-blue-900 bg-blue-100',
+            'even' => 'divide-x divide-blue-100 text-sm text-blue-900 bg-blue-100',
+            'odd' => 'divide-x divide-white text-sm text-gray-900 bg-white',
             'selected' => 'divide-x divide-green-100 text-sm text-green-900 bg-yellow-100',
         ],
         'cell' => 'whitespace-no-wrap text-sm text-gray-900 px-6 py-2',
