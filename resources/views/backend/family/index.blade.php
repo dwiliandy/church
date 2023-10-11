@@ -1,5 +1,5 @@
 @extends('layouts.backend.app',[
-  'title' =>'Data Keluarga'
+  'title' =>'Master Data Keluarga'
 ])
 
 @push('css')
@@ -10,7 +10,7 @@
     <nav class="breadcrumb flex-col">
       <ol class="flex">
         <li class="breadcrumb-item "><a class="text-blue-500"href="#">Home</a></li>
-        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Daftar Keluarga<span></li>
+        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Master Daftar Keluarga<span></li>
       </ol>
       <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Daftar Keluarga</h4>
     </nav>

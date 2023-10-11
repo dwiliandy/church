@@ -31,7 +31,6 @@ class AppServiceProvider extends ServiceProvider
             return number_format($price, 0, ',', '.');
         });
 
-        config(['app.locale' => 'id']);
-	      Carbon::setLocale('id');
+        Carbon::setLocale(config('app.locale'));
     }
 }

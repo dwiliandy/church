@@ -64,22 +64,22 @@
       Data Keuangan
     </span>
   </div>
-  <li class="nav-item {{ Request::routeIs('year-data') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('year-data') }}">
-      <i class="far fa-calendar"></i>
-        <span>Tahun </span>
-    </a>
-  </li>
   <li class="nav-item {{ Request::routeIs('submissions') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('submissions') }}">
       <i class="bi bi-file-earmark-plus"></i>
         <span>Pengajuan </span> 
     </a>
   </li>
-  <li class="nav-item {{ Request::routeIs('year-data') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('year-data') }}">
+  <li class="nav-item {{ Request::routeIs('approvals.index') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('approvals.index') }}">
       <i class="bi bi-card-checklist"></i>
         <span>Persetujuan </span><span class="badge badge-danger">{{ DB::table('approvals')->where('approver',Auth::user()->id)->where('status','Menunggu')->count() }}</span> 
+    </a>
+  </li>
+  <li class="nav-item {{ Request::routeIs('year-data') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('year-data') }}">
+      <i class="far fa-calendar"></i>
+        <span>Tahun </span>
     </a>
   </li>
   <!-- Sidebar Toggler (Sidebar) -->

@@ -1,5 +1,5 @@
 @extends('layouts.backend.app',[
-    'title' =>'Kolom'
+    'title' =>'Kepel atau Kolom'
 ])
 
 @push('css')
@@ -9,10 +9,10 @@
   <div class="container mx-auto">
     <nav class="breadcrumb flex-col">
       <ol class="flex">
-        <li class="breadcrumb-item "><a class="text-blue-500"href="#">Dashboard</a></li>
-        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Kolom<span></li>
+        <li class="breadcrumb-item "><a class="text-blue-500"href="#">Home</a></li>
+        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Kepel atau Kolom<span></li>
       </ol>
-      <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Data Kolom</h4>
+      <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Data Kepel atau Kolom</h4>
     </nav>
 
     <div class="row">

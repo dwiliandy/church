@@ -22,17 +22,17 @@ class ApprovalDetailsTable extends LivewireDatatable
         return [
 
           Column::name('users.name')
-              ->label('Nama'),
+              ->label('Nama')->alignCenter(),
 
           Column::name('approvals.action_date')
-              ->label('Tanggal Aksi'),
+              ->label('Tanggal Aksi')->alignCenter(),
 
           Column::callback(['approvals.status'], function ($status) {
             return view('backend.livewire.status-approval-detail', ['status' => $status]);
-          })->label('Status Pengajuan'),
+          })->label('Status Pengajuan')->alignCenter(),
 
           Column::name('approvals.comment')
-              ->label('Komentar'),
+              ->label('Komentar')->alignCenter(),
         ];
     }
 }

@@ -55,13 +55,16 @@ class FinancialController extends Controller
             foreach(User::where('approval_income',1)->get() as $user){
               if($user->id == Auth::user()->id){
                 $status = 'Diterima';
+                $action_date =  date('Y-m-d H:i:s');
               }else{
                 $status = 'Menunggu'; 
+                $action_date =  null;
               }
               Approval::create([
                 'status' => $status,
                 'approver' => $user->id,
-                'financial_id' => $financial->id
+                'financial_id' => $financial->id,
+                'action_date' => $action_date
               ]);
             }
           }else{
@@ -78,13 +81,16 @@ class FinancialController extends Controller
             foreach(User::where('approval_expenditure',1)->get() as $user){
               if($user->id == Auth::user()->id){
                 $status = 'Diterima';
+                $action_date =  date('Y-m-d H:i:s');
               }else{
                 $status = 'Menunggu'; 
+                $action_date = null;
               }
               Approval::create([
                 'status' => $status,
                 'approver' => $user->id,
-                'financial_id' => $financial->id
+                'financial_id' => $financial->id,
+                'action_date' => $action_date
               ]);
             }
           }

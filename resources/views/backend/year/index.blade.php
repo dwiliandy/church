@@ -1,5 +1,5 @@
 @extends('layouts.backend.app',[
-    'title' =>'Data Tahun'
+    'title' =>'Master Data Tahun'
 ])
 
 @push('css')

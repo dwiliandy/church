@@ -10,9 +10,9 @@
     <nav class="breadcrumb flex-col">
       <ol class="flex">
         <li class="breadcrumb-item "><a class="text-blue-500"href="#">Home</a></li>
-        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Users<span></li>
+        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Master Data Users<span></li>
       </ol>
-      <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Users</h4>
+      <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Data Users</h4>
     </nav>
 
     <div class="row">

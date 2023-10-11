@@ -1,5 +1,5 @@
 @extends('layouts.backend.app',[
-    'title' =>'Data Keluarga'
+    'title' =>'Data Tahun'
 ])
 
 @push('css')

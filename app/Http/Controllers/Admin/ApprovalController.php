@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class ApprovalController extends Controller
 {
     public function index(){
-      return 123;
+      return view('backend.approval.index');
     }
 }

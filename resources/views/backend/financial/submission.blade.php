@@ -10,9 +10,9 @@
     <nav class="breadcrumb flex-col">
       <ol class="flex">
         <li class="breadcrumb-item "><a class="text-blue-500"href="#">Home</a></li>
-        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Pengajuan Pengeluaran/Pemasukkan<span></li>
+        <li class="breadcrumb-item active text-blue-500" aria-current="page"><span class="">Pengajuan<span></li>
       </ol>
-      <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Pengajuan Pengeluaran/Pemasukkan</h4>
+      <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Pengajuan</h4>
     </nav>
 
     <div class="row">
