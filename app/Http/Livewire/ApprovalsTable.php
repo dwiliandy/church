@@ -27,7 +27,8 @@ class ApprovalsTable extends LivewireDatatable
                      ->leftJoin('incomes','incomes.id','=','income_years.income_id')
                      ->leftJoin('expenditures','expenditures.id','=','expenditure_years.expenditure_id')
                      ->where('financials.status','Menunggu')
-                     ->where('approvals.approver', '=', Auth::user()->id);
+                     ->where('approvals.approver', '=', Auth::user()->id)
+                     ->where('approvals.status', '=', 'Menunggu');
     }
 
     public function columns()

@@ -69,6 +69,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   // Submission
   Route::get('/submissions', [FinancialController::class,'submissions'])->name('submissions');
   Route::get('/submissions-detail/{id}', [FinancialController::class,'submissionDetail'])->name('submission-detail');
+  Route::post('/financial/approve', [FinancialController::class,'approve'])->name('approve');
+  Route::post('/financial/disapprove', [FinancialController::class,'disapprove'])->name('disapprove');
 });
 
 

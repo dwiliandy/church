@@ -148,6 +148,46 @@ class FinancialController extends Controller
 
     public function submissionDetail($finance){
       $financial = Financial::where('id', base64_decode($finance))->first();
-      return view('backend.financial.submission-show', \compact('financial'));
+      $can_action = Approval::where('financial_id', $financial->id)->where('approver', Auth::user()->id)->where('status','Menunggu')->count() > 0 ? true : false;
+      return view('backend.financial.submission-show', \compact('financial','can_action'));
+    }
+
+    public function approve(Request $request){
+      $financial = Financial::where('id', base64_decode($request->finance))->first();
+      Approval::where('financial_id', $financial->id)->where('approver', Auth::user()->id)->update([
+        'status' => 'Diterima',
+        'action_date' => date('Y-m-d H:i:s')
+      ]);
+      if(Approval::where('financial_id', $financial->id)->where('status', 'Menunggu')->count() == 0){
+        $financial->update(['status' => 'Diterima']);
+      }
+      return Response::json(['success' => 'Pengajuan berhasil disetujui'],200);
+    }
+
+    public function disapprove(Request $request){
+      $validator = Validator::make($request->all(), [
+        'comment' => ['required'],
+      ], array(
+          'comment.required' => 'Alasan Harus Diisi',
+        ) 
+      );
+      if($validator->passes()){
+        $finance = Financial::where('id', base64_decode($request->finance_disapprove))->first();
+        foreach(Approval::where('financial_id', $finance->id)->where('status','Menunggu')->get() as $approval){
+          if($approval->approver == Auth::user()->id){
+            $comment = $request->comment;
+          }else{
+            $comment = 'Pengajuan ditolak oleh '.Auth::user()->name.' (Silahkan lihat kolom alasan untuk mengetahui alasan ditolak)';
+          }
+          $approval->update([
+            'status' => 'Ditolak',
+            'action_date' => date('Y-m-d H:i:s'),
+            'comment' => $comment
+          ]);
+        }
+        $finance->update(['status' => 'Ditolak']);
+        return Response::json(['success' => 'Pengajuan berhasil ditolak'],200);
+      }
+      return Response::json(['errors' => $validator->errors()],422);
     }
 }

@@ -32,7 +32,7 @@ class ApprovalDetailsTable extends LivewireDatatable
           })->label('Status Pengajuan')->alignCenter(),
 
           Column::name('approvals.comment')
-              ->label('Komentar')->alignCenter(),
+              ->label('Komentar'),
         ];
     }
 }
