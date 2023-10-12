@@ -84,5 +84,16 @@ class YearController extends Controller
   public function yearData(){
     return view('backend.year.index-data');
   }
+
+  public function getDataIncomes($id){
+    $year = Year::where('id', base64_decode($id))->first();
+    return view('backend.year.getDataIncome', compact('year'));
+  } 
+
+  public function getDataExpenditures($id){
+    $year = Year::where('id', base64_decode($id))->first();
+    // return view('backend.year.getDataIncome', compact('year'));
+    return $year;
+  } 
   // Admin Data
 }

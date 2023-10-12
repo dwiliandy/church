@@ -15,10 +15,6 @@
       <h4 class="uppercase font-semibold tracking-normal text-2xl text-blue-500 font-sans">Data Tahun</h4>
     </nav>
 
-    <div class="row">
-      <div class="col-md-12">
-      </div>
-    </div>
     <div class="py-3">
       <livewire:years-data-table />
     </div>

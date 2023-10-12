@@ -51,10 +51,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::resource('/expenditures', ExpenditureController::class);
   Route::resource('/settings', WebSettingController::class)->only(['index']);
   
-  // Admin Data
-    Route::resource('/approvals', ApprovalController::class)->only(['index']);
-    Route::resource('/data-year/{year}/financials', FinancialController::class);
-
   // Single Route
     // Year
   Route::get('/years/{id}/incomes', [YearController::class,'getIncomes'])->name('get-incomes');
@@ -71,6 +67,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function(){
   Route::get('/submissions-detail/{id}', [FinancialController::class,'submissionDetail'])->name('submission-detail');
   Route::post('/financial/approve', [FinancialController::class,'approve'])->name('approve');
   Route::post('/financial/disapprove', [FinancialController::class,'disapprove'])->name('disapprove');
+
+  
+  // Admin Data
+  Route::resource('/approvals', ApprovalController::class)->only(['index']);
+  Route::resource('/data-year/{year}/financials', FinancialController::class);
+    // Single Route
+    Route::get('/years/{id}/data-incomes', [YearController::class,'getDataIncomes'])->name('get-data-incomes');
+    Route::get('/years/{id}/data-expenditures', [YearController::class,'getDataExpenditures'])->name('get-data-expenditures');
 });
 
 

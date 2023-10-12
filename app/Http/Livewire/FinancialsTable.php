@@ -35,9 +35,10 @@ class FinancialsTable extends LivewireDatatable
     public function columns()
     {
         return [
-          Column::name('date')
+          DateColumn::name('date')
                   ->label('Tanggal')
                   ->searchable()
+                  ->sortable()
                   ->filterable(),
           // Income
           Column::name('incomes.unique_id')
