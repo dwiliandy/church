@@ -130,6 +130,12 @@
                   return (input === 0)?"0":input.toLocaleString("id-ID"); 
               }); 
             });
+            $("#finance_data").select2({
+              dropdownParent: $('#createModal'),
+              placeholder: 'Select Data',
+              defaultView: 'dropdown',
+              allowClear: true  
+            }).addClass("form-control");
           },
           error: function (request, status, error) {
             $("#paste_data").html('');

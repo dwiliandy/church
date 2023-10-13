@@ -65,7 +65,7 @@
                     <div x-data="{ init() {
                         window.livewire.on('startDownload', link => window.open(link, '_blank'))
                         } }" x-init="init">
-                        <button wire:click="export" class="excel flex items-center px-3 text-xs font-medium tracking-wider uppercase space-x-2 rounded-md leading-4"><span>{{ __('Export') }}</span>
+                        <button wire:click="export" class="excel flex items-center px-3 text-xs font-medium tracking-wider uppercase space-x-2 rounded-md leading-4"><span>{{ __('Custom Export') }}</span>
                             <x-icons.excel class="m-2" /></button>
                     </div>
                 @endif

@@ -69,11 +69,11 @@
             <p class="form-control">{{ Carbon\Carbon::parse($financial->date)->translatedFormat('d F Y'); }}</p>
           </div>
           <div class="col-md-6 p-1">
-            <label for="date" class="form-label">Kode Pemasukkan</label>
+            <label for="date" class="form-label">Kode Pengeluaran</label>
             <p class="form-control">{{ $financial->expenditure_year->expenditure->unique_id }}</p>
           </div>
           <div class="col-md-6 p-1">
-            <label for="date" class="form-label">Pembebanan Anggara</label>
+            <label for="date" class="form-label">Pembebanan Anggaran</label>
             <p class="form-control">{{ $financial->expenditure_year->expenditure->name }}</p>
           </div>
           <div class="col-md-6 p-1">
