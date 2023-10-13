@@ -25,4 +25,13 @@ class ExpenditureYear extends Model
     {
       return $this->belongsTo(Year::class,'year_id','id');
     }
+
+    public function financials()
+    {
+      return $this->HasMany(Financial::class,'expenditure_year_id','id');
+    }
+    public function approve_financials()
+    {
+      return $this->HasMany(Financial::class,'expenditure_year_id','id')->where('status', 'Diterima');
+    }
 }
