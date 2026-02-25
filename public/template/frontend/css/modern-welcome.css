@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-purple: #5b21b6;
+    --secondary-purple: #7c3aed;
+    --accent-cyan: #0891b2;
+    --bg-main: #ffffff;
+    --bg-alt: #f8fafc;
+    --bg-dark: #0f172a;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --text-white: #ffffff;
+    --glass-white: rgba(255, 255, 255, 0.8);
+    --glass-dark: rgba(15, 23, 42, 0.05);
+    --border-light: #e2e8f0;
+    --font-primary: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Base Layout */
+.section-wrapper {
+    position: relative;
+    padding: 100px 0;
+}
+
+.bg-alt-section {
+    background-color: var(--bg-alt);
+}
+
+/* Mesh Gradients (Subtle for Light Mode) */
+.mesh-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 10% 20%, rgba(91, 33, 182, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(8, 145, 178, 0.03) 0%, transparent 40%);
+}
+
+/* Typography */
+.display-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: inherit; /* Allow section to define color */
+}
+
+.display-title span {
+    background: linear-gradient(135deg, var(--secondary-purple) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 800;
+    font-size: 0.75rem;
+    color: var(--primary-purple);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Hero Section */
+.hero-bento {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #0a0a0c; /* Solid fall-back */
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 10, 12, 0.95) 0%, rgba(10, 10, 12, 0.6) 100%);
+    z-index: 1;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Modern Cards */
+.modern-card {
+    background: var(--bg-main);
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.modern-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.glass-card-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+/* Buttons */
+.btn-modern-primary {
+    background: var(--primary-purple);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-modern-primary:hover {
+    background: var(--secondary-purple);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(91, 33, 182, 0.3);
+    color: white;
+}
+
+/* Animations */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Items specific */
+.pelayan-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 24px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.article-item {
+    padding: 1.5rem;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.article-item:hover {
+    background: var(--bg-alt);
+    border-color: var(--border-light);
+}
+
+/* Form Styles */
+.modern-input {
+    background: var(--bg-alt);
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.modern-input:focus {
+    background: white;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 4px rgba(91, 33, 182, 0.1);
+    outline: none;
+}
+
+@media (max-width: 991px) {
+    .hero-bento {
+        height: auto;
+        padding: 140px 0 80px;
+    }
+}

@@ -11,88 +11,99 @@ use App\Models\ExpenditureYear;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
 
+use App\DataTables\YearsDataTable;
+
 class YearController extends Controller
 {
 
   // Master Data
-    public function index(){
-      $years = Year::count();
-      $this_year = date('Y', strtotime('-5 years'));
-      $year_data = [];
-      for($i = 1; $i <= 10; $i++){
-        array_push($year_data, date('Y', strtotime('01-01-'.$this_year.'+'.$i.'years')));
-      }
-      return view('backend.year.index', compact('years', 'year_data'));
+  public function index(YearsDataTable $dataTable)
+  {
+    $yearsCount = Year::count();
+    $this_year = date('Y', strtotime('-5 years'));
+    $year_data = [];
+    for ($i = 1; $i <= 10; $i++) {
+      array_push($year_data, date('Y', strtotime('01-01-' . $this_year . '+' . $i . 'years')));
+    }
+    return $dataTable->render('backend.year.index', compact('yearsCount', 'year_data'));
+  }
+
+  public function store(Request $request)
+  {
+    if ($request->name != NULL) {
+      $year = Year::create(['name' => $request->name]);
+    } else {
+      $last_year = Year::latest()->first()->name;
+      $year = Year::create(['name' => date('Y', strtotime('01-01-' . $last_year . '+1 years'))]);
     }
 
-    public function store(Request $request){
-      if($request->name != NULL){
-        $year = Year::create(['name' => $request->name]);
-      }else{
-        $last_year = Year::latest()->first()->name;
-        $year = Year::create(['name' => date('Y', strtotime('01-01-'.$last_year.'+1 years'))]);
-      }
-
-      foreach(Income::where('status', 1)->get() as $income){
-        IncomeYear::create([
-          'income_id' => $income->id,
-          'year_id' => $year->id,
-          'target' => 0
-        ]);
-      }
-
-      foreach(Expenditure::where('status', 1)->get() as $expenditure){
-        ExpenditureYear::create([
-          'expenditure_id' => $expenditure->id,
-          'year_id' => $year->id,
-          'target' => 0
-        ]);
-      }
-      return Response::json(['success' => 'Data Tahun Berhasil Dibuat'],201);
+    foreach (Income::where('status', 1)->get() as $income) {
+      IncomeYear::create([
+        'income_id' => $income->id,
+        'year_id' => $year->id,
+        'target' => 0
+      ]);
     }
 
-    // Years Income
-    public function getIncomes($id){
-      $year = Year::where('id', base64_decode($id))->first();
-      return view('backend.year.getIncome', compact('year'));
+    foreach (Expenditure::where('status', 1)->get() as $expenditure) {
+      ExpenditureYear::create([
+        'expenditure_id' => $expenditure->id,
+        'year_id' => $year->id,
+        'target' => 0
+      ]);
     }
+    return Response::json(['success' => 'Data Tahun Berhasil Dibuat'], 201);
+  }
 
-    public function updateIncomes(Request $request){
-      foreach($request['data'] as $key => $data){
-        $data = str_replace(".","",$data);
-        IncomeYear::where('id', base64_decode($key))->update(['target' => $data]);
-      }
-      return Response::json(['success' => 'Data Pemasukkan Tahun Berhasil Diubah'],200);
-    }
+  // Years Income
+  public function getIncomes($id)
+  {
+    $year = Year::where('id', base64_decode($id))->first();
+    return view('backend.year.getIncome', compact('year'));
+  }
 
-    // Years Expenditure
-    public function getExpenditures($id){
-      $year = Year::where('id', base64_decode($id))->first();
-      return view('backend.year.getExpenditure', compact('year'));
+  public function updateIncomes(Request $request)
+  {
+    foreach ($request['data'] as $key => $data) {
+      $data = str_replace(".", "", $data);
+      IncomeYear::where('id', base64_decode($key))->update(['target' => $data]);
     }
+    return Response::json(['success' => 'Data Pemasukkan Tahun Berhasil Diubah'], 200);
+  }
 
-    public function updateExpenditures(Request $request){
-      foreach($request['data'] as $key => $data){
-        $data = str_replace(".","",$data);
-        ExpenditureYear::where('id', base64_decode($key))->update(['target' => $data]);
-      }
-      return Response::json(['success' => 'Data Pengeluaran Tahun Berhasil Diubah'],200);
+  // Years Expenditure
+  public function getExpenditures($id)
+  {
+    $year = Year::where('id', base64_decode($id))->first();
+    return view('backend.year.getExpenditure', compact('year'));
+  }
+
+  public function updateExpenditures(Request $request)
+  {
+    foreach ($request['data'] as $key => $data) {
+      $data = str_replace(".", "", $data);
+      ExpenditureYear::where('id', base64_decode($key))->update(['target' => $data]);
     }
+    return Response::json(['success' => 'Data Pengeluaran Tahun Berhasil Diubah'], 200);
+  }
   // End Master Data
 
   // Admin Data
-  public function yearData(){
+  public function yearData()
+  {
     return view('backend.year.index-data');
   }
 
-  public function getDataIncomes($id){
+  public function getDataIncomes($id)
+  {
     $year = Year::where('id', base64_decode($id))->first();
     return view('backend.year.getDataIncome', compact('year'));
-  } 
+  }
 
-  public function getDataExpenditures($id){
+  public function getDataExpenditures($id)
+  {
     $year = Year::where('id', base64_decode($id))->first();
     return view('backend.year.getDataExpenditure', compact('year'));
-  } 
+  }
   // Admin Data
 }
